@@ -1,0 +1,122 @@
+\doxysection{Ticketing\+Controller.\+Movie\+Ticket\+Controller Class Reference}
+\hypertarget{class_ticketing_controller_1_1_movie_ticket_controller}{}\label{class_ticketing_controller_1_1_movie_ticket_controller}\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a2f7c9ff1f251e1845130cdc6e3ba36bc}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Ticketing\+System ticket\+\_\+system)
+\item 
+List\mbox{[}Movie\mbox{]} \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a1a805d7d3768fe038afe41ef0f30b7d0}{search\+\_\+movies}} (self, str title, str language, str genre, datetime release\+\_\+date)
+\item 
+None \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_ac5451b161a0394aec406f89f227e13dc}{view\+\_\+movie\+\_\+details}} (self, Movie movie)
+\item 
+List\mbox{[}Screening\mbox{]} \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a29ba1d4a8029c1cd73b8a56bd04f04d0}{view\+\_\+screenings}} (self, Movie movie)
+\item 
+Booking \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a6c249d56c0fae03aac6b84d0ea1c091b}{book\+\_\+tickets}} (self, str movie\+\_\+title, str customer\+\_\+name, List\mbox{[}int\mbox{]} seats)
+\item 
+List\mbox{[}int\mbox{]} \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a8b2a03b00cde6ce58a40acb33c4441ec}{get\+\_\+available\+\_\+seats}} (self, str movie\+\_\+title)
+\item 
+List\mbox{[}Booking\mbox{]} \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db}{get\+\_\+customer\+\_\+bookings}} (self, str customer\+\_\+name)
+\item 
+None \mbox{\hyperlink{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a}{cancel\+\_\+booking}} (self, Booking booking)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a2f7c9ff1f251e1845130cdc6e3ba36bc}\label{class_ticketing_controller_1_1_movie_ticket_controller_a2f7c9ff1f251e1845130cdc6e3ba36bc} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Ticketing\+System}]{ticket\+\_\+system }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor for the MovieTicketController class.
+
+:param ticket_system: An instance of the MovieTicketSystem.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a6c249d56c0fae03aac6b84d0ea1c091b}\label{class_ticketing_controller_1_1_movie_ticket_controller_a6c249d56c0fae03aac6b84d0ea1c091b} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!book\_tickets@{book\_tickets}}
+\index{book\_tickets@{book\_tickets}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{book\_tickets()}{book\_tickets()}}
+{\footnotesize\ttfamily  Booking Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+book\+\_\+tickets (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{movie\+\_\+title,  }\item[{str}]{customer\+\_\+name,  }\item[{List\mbox{[}int\mbox{]}}]{seats }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Book tickets for a movie on behalf of a customer.
+
+:param movie_title: The title of the movie to book.
+:param customer_name: The name of the customer making the booking.
+:param seats: List of seat numbers to book.
+:return: A Booking object representing the booking.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a}\label{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!cancel\_booking@{cancel\_booking}}
+\index{cancel\_booking@{cancel\_booking}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{cancel\_booking()}{cancel\_booking()}}
+{\footnotesize\ttfamily  None Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+cancel\+\_\+booking (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Booking}]{booking }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Cancel a booking and provide a refund to the customer.
+
+:param booking: The booking to be canceled.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a8b2a03b00cde6ce58a40acb33c4441ec}\label{class_ticketing_controller_1_1_movie_ticket_controller_a8b2a03b00cde6ce58a40acb33c4441ec} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!get\_available\_seats@{get\_available\_seats}}
+\index{get\_available\_seats@{get\_available\_seats}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{get\_available\_seats()}{get\_available\_seats()}}
+{\footnotesize\ttfamily  List\mbox{[}int\mbox{]} Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+get\+\_\+available\+\_\+seats (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{movie\+\_\+title }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a list of available seats for a specific movie.
+
+:param movie_title: The title of the movie for which to retrieve available seats.
+:return: List of available seat numbers.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db}\label{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!get\_customer\_bookings@{get\_customer\_bookings}}
+\index{get\_customer\_bookings@{get\_customer\_bookings}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{get\_customer\_bookings()}{get\_customer\_bookings()}}
+{\footnotesize\ttfamily  List\mbox{[}Booking\mbox{]} Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+get\+\_\+customer\+\_\+bookings (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{customer\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get a list of bookings made by a specific customer.
+
+:param customer_name: The name of the customer for whom to retrieve bookings.
+:return: List of Booking objects made by the customer.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a1a805d7d3768fe038afe41ef0f30b7d0}\label{class_ticketing_controller_1_1_movie_ticket_controller_a1a805d7d3768fe038afe41ef0f30b7d0} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!search\_movies@{search\_movies}}
+\index{search\_movies@{search\_movies}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{search\_movies()}{search\_movies()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\mbox{]} Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+search\+\_\+movies (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{title,  }\item[{str}]{language,  }\item[{str}]{genre,  }\item[{datetime}]{release\+\_\+date }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Search for movies based on title, language, genre, and release date.
+
+:param title: The title of the movie to search for.
+:param language: The language of the movie.
+:param genre: The genre of the movie.
+:param release_date: The release date of the movie.
+:return: List of Movie objects matching the search criteria.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ac5451b161a0394aec406f89f227e13dc}\label{class_ticketing_controller_1_1_movie_ticket_controller_ac5451b161a0394aec406f89f227e13dc} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!view\_movie\_details@{view\_movie\_details}}
+\index{view\_movie\_details@{view\_movie\_details}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{view\_movie\_details()}{view\_movie\_details()}}
+{\footnotesize\ttfamily  None Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+view\+\_\+movie\+\_\+details (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Movie}]{movie }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}View details of a selected movie.
+
+:param movie: The selected Movie object.
+\end{DoxyVerb}
+ \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a29ba1d4a8029c1cd73b8a56bd04f04d0}\label{class_ticketing_controller_1_1_movie_ticket_controller_a29ba1d4a8029c1cd73b8a56bd04f04d0} 
+\index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!view\_screenings@{view\_screenings}}
+\index{view\_screenings@{view\_screenings}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
+\doxysubsubsection{\texorpdfstring{view\_screenings()}{view\_screenings()}}
+{\footnotesize\ttfamily  List\mbox{[}Screening\mbox{]} Ticketing\+Controller.\+Movie\+Ticket\+Controller.\+view\+\_\+screenings (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Movie}]{movie }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}View available screenings for a selected movie.
+
+:param movie: The selected Movie object.
+:return: List of Screening objects for the movie.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Ticketing\+Controller.\+py\end{DoxyCompactItemize}

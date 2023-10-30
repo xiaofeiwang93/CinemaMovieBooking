@@ -1,0 +1,9 @@
+id,movieid,cardsrcaddress,detailbanneraddress
+1,1,../../static/Cards/TheNunII.jpg,../static/MovieDetailBanner/TheNunII.jpg
+2,2,../../static/Cards/FiveNightsatFreddy.jpg,../static/MovieDetailBanner/FiveNightsatFreddy.jpg
+3,3,../../static/Cards/KillersoftheFlowerMoon.jpg,../static/MovieDetailBanner/KillersoftheFlowerMoon.jpg
+4,4,../../static/Cards/Uproar.jpg,../static/MovieDetailBanner/Uproar.jpg
+5,5,../../static/Cards/TaylorSwift.jpg,../static/MovieDetailBanner/TaylorSwift.jpg
+6,6,../../static/Cards/Oppenheimer.jpg,../static/MovieDetailBanner/Oppenheimer.jpg
+7,7,../../static/Cards/SawX.jpg,../static/MovieDetailBanner/SawX.jpg
+8,8,../../static/Cards/TheCreator.jpg,../static/MovieDetailBanner/TheCreator.jpg

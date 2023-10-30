@@ -1,0 +1,70 @@
+.bg-lincoln-dark-blue {
+    background-color: #000000;
+}
+
+.bg-lincoln-dark-grey {
+    background-color: #33333C;
+}
+
+.footer-section p {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section p:hover {
+    color: #FEBA38;
+    text-decoration: none;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #FEBA38;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+}
+
+footer {
+    padding: 10px;
+    position: sticky;
+    top: 100%;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
+
+.status-very-interested {
+    color: rgba(0, 128, 0, 0.658);
+}
+
+.status-maybe {
+    color: rgba(214, 135, 45, 0.658);
+}
+
+.status-not-interested {
+    color: grey;
+}
+
+.preference-submitted {
+    color: rgba(0, 128, 0, 0.658);
+}
+
+.preference-not-submitted {
+    color: red;
+}
+
+.nav-link {
+    color: black;
+}

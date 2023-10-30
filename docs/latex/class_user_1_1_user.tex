@@ -1,0 +1,176 @@
+\doxysection{User.\+User Class Reference}
+\hypertarget{class_user_1_1_user}{}\label{class_user_1_1_user}\index{User.User@{User.User}}
+
+
+Abstract User class derived from Person.  
+
+
+Inheritance diagram for User.\+User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user_1_1_user}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_1_1_user_a7ac5db98603ad022bad45888f53fab66}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, str username, str password)
+\begin{DoxyCompactList}\small\item\em Constructor for the User class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_user_ad1d17a837adecb3f2622ae791c9627a5}{username}} (self)
+\begin{DoxyCompactList}\small\item\em Get the username of the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_user_a838e534f51949725430d26af9fc20f8a}{username}} (self, value)
+\begin{DoxyCompactList}\small\item\em Set the username of the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_user_a9a47aee56295317d9d093aed35707aa7}{password}} (self)
+\begin{DoxyCompactList}\small\item\em Get the password of the user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_1_1_user_af5fc2d97fb69dfff4ba503b56721bb65}{password}} (self, value)
+\begin{DoxyCompactList}\small\item\em Set the password of the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_user_ad8be0016bb34e6db76f104e8a6414156}{login}} (self)
+\begin{DoxyCompactList}\small\item\em Abstract method to log in the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_user_a4d8cdc5804efe9656bfdf363162e45c3}{logout}} (self)
+\begin{DoxyCompactList}\small\item\em Abstract method to log out the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_1_1_user_afb42e041ecfe624261d10a9dbb90d035}{reset\+\_\+password}} (self)
+\begin{DoxyCompactList}\small\item\em Abstract method to reset the user\textquotesingle{}s password. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_user_1_1_user_af909259fe57a170a0c70d3ea1f0a38a0}\label{class_user_1_1_user_af909259fe57a170a0c70d3ea1f0a38a0} 
+{\bfseries username}
+\item 
+\Hypertarget{class_user_1_1_user_adad56b3901ed3a81469a0229506f3dfc}\label{class_user_1_1_user_adad56b3901ed3a81469a0229506f3dfc} 
+{\bfseries password}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract User class derived from Person. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user. \\
+\hline
+{\em password} & The password of the user. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_1_1_user_a7ac5db98603ad022bad45888f53fab66}\label{class_user_1_1_user_a7ac5db98603ad022bad45888f53fab66} 
+\index{User.User@{User.User}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily User.\+User.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{username,  }\item[{str}]{password }\end{DoxyParamCaption})}
+
+
+
+Constructor for the User class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user. \\
+\hline
+{\em password} & The password of the user. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_1_1_user_ad8be0016bb34e6db76f104e8a6414156}\label{class_user_1_1_user_ad8be0016bb34e6db76f104e8a6414156} 
+\index{User.User@{User.User}!login@{login}}
+\index{login@{login}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily  bool User.\+User.\+login (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Abstract method to log in the user. 
+
+\begin{DoxyReturn}{Returns}
+\+: True if the login is successful, False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_user_1_1_user_a4d8cdc5804efe9656bfdf363162e45c3}\label{class_user_1_1_user_a4d8cdc5804efe9656bfdf363162e45c3} 
+\index{User.User@{User.User}!logout@{logout}}
+\index{logout@{logout}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily  bool User.\+User.\+logout (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Abstract method to log out the user. 
+
+\begin{DoxyReturn}{Returns}
+\+: True if the logout is successful, False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_user_1_1_user_a9a47aee56295317d9d093aed35707aa7}\label{class_user_1_1_user_a9a47aee56295317d9d093aed35707aa7} 
+\index{User.User@{User.User}!password@{password}}
+\index{password@{password}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{password()}{password()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily User.\+User.\+password (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Get the password of the user. 
+
+\begin{DoxyReturn}{Returns}
+\+: The password of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_1_1_user_af5fc2d97fb69dfff4ba503b56721bb65}\label{class_user_1_1_user_af5fc2d97fb69dfff4ba503b56721bb65} 
+\index{User.User@{User.User}!password@{password}}
+\index{password@{password}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{password()}{password()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily User.\+User.\+password (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the password of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new password to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_1_1_user_afb42e041ecfe624261d10a9dbb90d035}\label{class_user_1_1_user_afb42e041ecfe624261d10a9dbb90d035} 
+\index{User.User@{User.User}!reset\_password@{reset\_password}}
+\index{reset\_password@{reset\_password}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{reset\_password()}{reset\_password()}}
+{\footnotesize\ttfamily  bool User.\+User.\+reset\+\_\+password (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Abstract method to reset the user\textquotesingle{}s password. 
+
+\begin{DoxyReturn}{Returns}
+\+: True if the password reset is successful, False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_user_1_1_user_ad1d17a837adecb3f2622ae791c9627a5}\label{class_user_1_1_user_ad1d17a837adecb3f2622ae791c9627a5} 
+\index{User.User@{User.User}!username@{username}}
+\index{username@{username}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily User.\+User.\+username (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Get the username of the user. 
+
+\begin{DoxyReturn}{Returns}
+\+: The username of the user. 
+\end{DoxyReturn}
+\Hypertarget{class_user_1_1_user_a838e534f51949725430d26af9fc20f8a}\label{class_user_1_1_user_a838e534f51949725430d26af9fc20f8a} 
+\index{User.User@{User.User}!username@{username}}
+\index{username@{username}!User.User@{User.User}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily User.\+User.\+username (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the username of the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new username to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Models/\+Users/User.\+py\end{DoxyCompactItemize}
