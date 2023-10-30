@@ -19,7 +19,11 @@
     <nav class="nav nav-underline">
         {% if booking_dates|length > 0 %}
             {% for key, value in booking_dates.items() %}
-                <a class="nav-link" aria-current="page" href="{{ url_for('search_movie_list_by_screening_date', date=key) }}">{{ key }}</a>
+                {% if value == current_date %}
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('search_movie_list_by_screening_date', date=key) }}">{{ key }}</a>
+                {% else %}
+                    <a class="nav-link" aria-current="page" href="{{ url_for('search_movie_list_by_screening_date', date=key) }}">{{ key }}</a>
+                {% endif %}
             {% endfor %}
         {% endif %}
     </nav>
@@ -43,7 +47,7 @@
                             <h5 class="card-title">{{ movie.title }}</h5>
                             {% if movie.screening_list|length != 0 %}
                                 {% for screening in movie.screening_list %}
-                                    <button type="button" class="btn btn-secondary btn-sm">{{ screening.starttime }}</button>
+                                    <a href="{{ url_for('book_tickets', movieid=movie.id, date=current_date, starttime=screening.starttime)}}" ><button type="button" class="btn btn-secondary btn-sm">{{ screening.starttime }}</button></a>
                                 {% endfor %}
                             {% endif %}
                         </div>

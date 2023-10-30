@@ -316,7 +316,7 @@ class DbService:
         screening_records = []
 
         # Add additional screening records for the next 10 days
-        for i in range(1, 11):
+        for i in range(0, 11):
             date = datetime.now() + timedelta(days=i)
             date_str = date.strftime(DbService.date_format)
             

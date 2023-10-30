@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List
 
-from flask import render_template, request
+from flask import jsonify, render_template, request
 from Models.Bookings.Booking import Booking
 from Models.Movies.Movie import Movie
 from Models.Movies.Screening import Screening
@@ -34,9 +34,8 @@ class MovieTicketController:
     def view_movie_list(self):
         movie_list = self.movie_service.get_all_movies()
         booking_dates = self.common_service.generate_booking_dates()
-        active_date = "Today"
 
-        return render_template('./Movies/movie_list.html', movie_list=movie_list, booking_dates=booking_dates, active_date=active_date)
+        return render_template('./Movies/movie_list.html', movie_list=movie_list, booking_dates=booking_dates, current_date=booking_dates["Today"])
     
     def view_movie_detail(self, movie_id: int):
         """!
@@ -48,8 +47,8 @@ class MovieTicketController:
         """
         movie = self.movie_service.search_movie_by_id(movie_id)
         booking_dates = self.common_service.generate_booking_dates()
-        
-        return render_template('./Movies/movie_detail.html', movie=movie, booking_dates=booking_dates)
+
+        return render_template('./Movies/movie_detail.html', movie=movie, booking_dates=booking_dates, current_date=booking_dates["Today"])
 
     def search_movie_by_screening_date(self):
         """!
@@ -64,11 +63,14 @@ class MovieTicketController:
 
         movie = self.movie_service.search_movie_by_id(movieid)
         booking_dates = self.common_service.generate_booking_dates()
+        current_date = booking_dates["Today"]
         screening_list = self.movie_service.search_movie_by_screening_date(booking_dates[date], movieid)
-
         movie.screening_list = screening_list
+
+        if movieid and date:
+            current_date = booking_dates[date]
         
-        return render_template('./Movies/movie_detail.html', movie=movie, screening_list=screening_list, booking_dates=booking_dates)
+        return render_template('./Movies/movie_detail.html', movie=movie, screening_list=screening_list, booking_dates=booking_dates, current_date=current_date)
         
     def search_movie_list_by_screening_date(self):
         """!
@@ -90,9 +92,11 @@ class MovieTicketController:
         # remove movie with no screening
         movie_list = [movie for movie in movie_list if movie.screening_list != []]
         
-        return render_template('./Movies/movie_list.html', movie_list=movie_list, screening_list=screening_list, booking_dates=booking_dates)
+        if date:
+            current_date = booking_dates[date]
         
-    
+        return render_template('./Movies/movie_list.html', movie_list=movie_list, screening_list=screening_list, booking_dates=booking_dates, current_date=current_date)
+        
     def search_movies(self):
         """!
         Search for movies based on title, language, genre, and release date.
@@ -130,16 +134,7 @@ class MovieTicketController:
         
         return render_template('./Movies/movie_list.html', movie_list=movie_list, booking_dates=booking_dates)
 
-    def view_screenings(self, movie: Movie) -> List[Screening]:
-        """!
-        View available screenings for a selected movie.
-
-        :param movie: The selected Movie object.
-        :return: List of Screening objects for the movie.
-        """
-        pass
-
-    def book_tickets(self, movie_title: str, customer_name: str, seats: List[int]) -> Booking:
+    def book_tickets(self):
         """!
         Book tickets for a movie on behalf of a customer.
 
@@ -148,7 +143,21 @@ class MovieTicketController:
         :param seats: List of seat numbers to book.
         :return: A Booking object representing the booking.
         """
-        pass
+        movie_id = request.args.get('movieid')
+        date = request.args.get('date')
+        start_time = request.args.get('starttime')
+
+        print(movie_id)
+        print(date)
+        print(start_time)
+        #booking = self.movie_service.book_tickets(movie_id, customer_name, seats, screening_id)
+
+        if request.method=="POST":
+            print("Back here")
+            selected_seats = request.get_json()
+            print(selected_seats)
+
+        return render_template('./Booking/booking.html')
 
     def get_available_seats(self, movie_title: str) -> List[int]:
         """!
