@@ -51,7 +51,7 @@ class MovieTicketController:
         
         return render_template('./Movies/movie_detail.html', movie=movie, booking_dates=booking_dates)
 
-    def search_movies_by_screening_date(self):
+    def search_movie_by_screening_date(self):
         """!
         Search for screening based on screening date.
 
@@ -65,9 +65,32 @@ class MovieTicketController:
         movie = self.movie_service.search_movie_by_id(movieid)
         booking_dates = self.common_service.generate_booking_dates()
         screening_list = self.movie_service.search_movie_by_screening_date(booking_dates[date], movieid)
+
         movie.screening_list = screening_list
         
         return render_template('./Movies/movie_detail.html', movie=movie, screening_list=screening_list, booking_dates=booking_dates)
+        
+    def search_movie_list_by_screening_date(self):
+        """!
+        Search for list of screening based on screening date.
+
+        :param date: The date of the movie to search for.
+        :return: List of Movie objects matching the search criteria -- only return the movies that have screening for the selected date.
+        """
+
+        date = request.args.get('date')
+
+        movie_list = self.movie_service.get_all_movies()
+        booking_dates = self.common_service.generate_booking_dates()
+
+        for movie in movie_list:
+            screening_list = self.movie_service.search_movie_by_screening_date(booking_dates[date], movie.id)
+            movie.screening_list = screening_list
+
+        # remove movie with no screening
+        movie_list = [movie for movie in movie_list if movie.screening_list != []]
+        
+        return render_template('./Movies/movie_list.html', movie_list=movie_list, screening_list=screening_list, booking_dates=booking_dates)
         
     
     def search_movies(self):

@@ -112,21 +112,19 @@ class MovieService:
         screening_data_list = DbService.search_records_by_attribute('date', date, DbService.screeningDbName)
 
         for screening_data in screening_data_list:
-            screening = ScreeningViewModel()
-            screening.id = screening_data.get('id')
-            screening.movieid = screening_data.get('movieid')
-            screening.date = screening_data.get('date')
-            screening.starttime = screening_data.get('starttime')
-            screening.endtime = screening_data.get('endtime')
-            screening.hallid = screening_data.get('hallid')
+            if movieid != None and movieid != '':
+                if screening_data.get('movieid') == movieid:
+                    screening = ScreeningViewModel()
+                    screening.id = screening_data.get('id')
+                    screening.movieid = screening_data.get('movieid')
+                    screening.date = screening_data.get('date')
+                    screening.starttime = screening_data.get('starttime')
+                    screening.endtime = screening_data.get('endtime')
+                    screening.hallid = screening_data.get('hallid')
+            
+                    screening_list.append(screening)
 
-            if movieid is not None and movieid != '' and screening_data.get('movieid') != movieid:
-                continue  # Skip this screening if movieid doesn't match
-
-            screening_list.append(screening)
-
-
-        return screening_list
+        return screening_list if bool(screening_list) else []
 
     def map_movie_view_model(movie_info) -> List[MovieViewModel]:
         """!

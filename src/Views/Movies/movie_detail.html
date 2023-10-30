@@ -32,7 +32,7 @@
     <nav class="nav nav-underline">
         {% if booking_dates|length > 0 %}
             {% for key, value in booking_dates.items() %}
-                <a class="nav-link" aria-current="page" href="{{ url_for('search_movies_by_screening_date', movieid=movie.id, date=key) }}">{{ key }}</a>
+                <a class="nav-link" aria-current="page" href="{{ url_for('search_movie_by_screening_date', movieid=movie.id, date=key) }}">{{ key }}</a>
             {% endfor %}
         {% endif %}
     </nav> 

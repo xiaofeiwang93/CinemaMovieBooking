@@ -305,12 +305,6 @@ class DbService:
     def db_initial_setup_screening():
         DbService.create_csv_file(DbService.screeningDbName, DbService.screeningDbNameColumns)
         DbService.db_initial_insert_screening()
-    
-    def db_initial_setup_screening():
-        DbService.create_csv_file(DbService.screeningDbName, DbService.screeningDbNameColumns)
-        DbService.db_initial_insert_screening()
-
-    import random
 
     def db_initial_insert_screening():
         """!
