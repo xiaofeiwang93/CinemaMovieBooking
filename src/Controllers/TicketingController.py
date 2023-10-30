@@ -5,6 +5,7 @@ from flask import jsonify, render_template, request
 from Models.Bookings.Booking import Booking
 from Models.Movies.Movie import Movie
 from Models.Movies.Screening import Screening
+from ViewModels.BookingViewModel import BookingViewModel
 
 class MovieTicketController:
     def __init__(self, db_service, login_service, common_service, movie_service) -> None:
@@ -143,21 +144,28 @@ class MovieTicketController:
         :param seats: List of seat numbers to book.
         :return: A Booking object representing the booking.
         """
+        
         movie_id = request.args.get('movieid')
-        date = request.args.get('date')
-        start_time = request.args.get('starttime')
+        screening_id = request.args.get('screeningid')
 
-        print(movie_id)
-        print(date)
-        print(start_time)
-        #booking = self.movie_service.book_tickets(movie_id, customer_name, seats, screening_id)
+        movie = self.movie_service.search_movie_by_id(movie_id)
+        screening = self.movie_service.search_screening_by_id(screening_id)
+        
+        booking = BookingViewModel()
+        booking.movie = movie
+        booking.screening = screening
+    
+
 
         if request.method=="POST":
             print("Back here")
             selected_seats = request.get_json()
             print(selected_seats)
+            booking.selected_seat_list = selected_seats
 
-        return render_template('./Booking/booking.html')
+
+        print(booking)
+        return render_template('./Booking/booking.html', booking=booking)
 
     def get_available_seats(self, movie_title: str) -> List[int]:
         """!

@@ -125,6 +125,25 @@ class MovieService:
                     screening_list.append(screening)
 
         return screening_list if bool(screening_list) else []
+    
+    def search_screening_by_id(screening_id: int) -> ScreeningViewModel:
+        """!
+        Search for screening based on screening id.
+
+        :param screening_id: The id of the screening to search for.
+        :return: List of Movie View Model objects matching the search criteria.
+        """
+        screening_data = DbService.search_record_by_id(screening_id, DbService.screeningDbName)
+
+        screening = ScreeningViewModel()
+        screening.id = screening_data.get('id')
+        screening.movieid = screening_data.get('movieid')
+        screening.date = screening_data.get('date')
+        screening.starttime = screening_data.get('starttime')
+        screening.endtime = screening_data.get('endtime')
+        screening.hallid = screening_data.get('hallid')
+
+        return screening
 
     def map_movie_view_model(movie_info) -> List[MovieViewModel]:
         """!
