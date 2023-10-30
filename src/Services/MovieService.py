@@ -16,7 +16,7 @@ class MovieService:
         movie_list = DbService.read_all_records(DbService.movieDbName)
 
         for movie_info in movie_list:
-            movie_view_model = MovieService.map_movie_view_model(movie_info)
+            movie_view_model = MovieService.map_movie_model(movie_info)
 
             MovieService.get_movie_media(movie_view_model.id, movie_view_model)
             MovieService.get_movie_screenings(movie_view_model.id, movie_view_model)
@@ -161,6 +161,25 @@ class MovieService:
         movie.release_date = movie_info.get('release_date')
         movie.country = movie_info.get('country')
         movie.genre = movie_info.get('genre')
+
+        return movie
+    
+    def map_movie_model(movie_info) -> List[Movie]:
+        """!
+        Map the movie_list from dictionary into movie model.
+
+        :return: List of Movie Model.
+        """
+
+        movie = Movie(
+            movie_info.get('title'),
+            movie_info.get('description'),
+            movie_info.get('duration_mins'),
+            movie_info.get('language'),
+            movie_info.get('release_date'),
+            movie_info.get('country'),
+            movie_info.get('genre')
+        )
 
         return movie
     

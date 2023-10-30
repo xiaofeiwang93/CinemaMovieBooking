@@ -17,6 +17,11 @@ class DbService:
     screeningDbName = f"{database_path}screening.csv"
     screeningDbNameColumns = ["id", "movieid", "date", "starttime", "endtime", "hallid"]
     
+    bookingDbName = f"{database_path}booking.csv"
+    bookingDbNameColumns = ["id", "movieid", "screeningid", "hallid", "customerid"]
+
+    bookingSeatsDbName = f"{database_path}bookingseats.csv"
+    bookingSeatsDbNameColumns = ["id", "type", "row", "seatnumber", "price", "bookingid"]
 
     date_format = "%d/%m/%Y"
 
@@ -339,7 +344,11 @@ class DbService:
         for record in screening_records:
             DbService.add_record(DbService.screeningDbName, record, DbService.screeningDbNameColumns)
 
+    def db_initial_setup_booking():
+        DbService.create_csv_file(DbService.bookingDbName, DbService.bookingDbNameColumns)
+        DbService.create_csv_file(DbService.bookingSeatsDbName, DbService.bookingSeatsDbNameColumns)
 
     def setup_database():
         DbService.db_initial_setup_movie()
         DbService.db_initial_setup_screening()
+        DbService.db_initial_setup_booking()

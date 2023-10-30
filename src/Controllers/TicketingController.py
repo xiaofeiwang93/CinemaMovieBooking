@@ -154,14 +154,14 @@ class MovieTicketController:
         booking = BookingViewModel()
         booking.movie = movie
         booking.screening = screening
-    
-
 
         if request.method=="POST":
             print("Back here")
             selected_seats = request.get_json()
             print(selected_seats)
             booking.selected_seat_list = selected_seats
+
+            
 
 
         print(booking)
