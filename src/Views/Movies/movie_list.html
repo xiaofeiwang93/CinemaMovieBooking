@@ -47,7 +47,7 @@
                             <h5 class="card-title">{{ movie.title }}</h5>
                             {% if movie.screening_list|length != 0 %}
                                 {% for screening in movie.screening_list %}
-                                    <a href="{{ url_for('book_tickets', movieid=movie.id, screeningid=screening.id)}}" ><button type="button" class="btn btn-secondary btn-sm">{{ screening.starttime }}</button></a>
+                                    <a href="{{ url_for('select_seats', movieid=movie.id, screeningid=screening.id)}}" ><button type="button" class="btn btn-secondary btn-sm">{{ screening.starttime }}</button></a>
                                 {% endfor %}
                             {% endif %}
                         </div>

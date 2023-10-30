@@ -10,6 +10,9 @@
 </div>
 
 <div class="container mt-5">
+    <input type="hidden" id="movieid" value="{{ booking.movie.id }}">
+    <input type="hidden" id="screeningid" value="{{ booking.screening.id }}">
+
     <h1 class="text-center title">{{ booking.movie.title }}</h1>
     <h2 class="text-center title">{{ booking.screening.date }} {{ booking.screening.starttime}}</h2>
     <h2 class="text-center subtitle">Cinema Seat Selection</h2>
@@ -22,9 +25,9 @@
     <div class="text-center">
         <button id="checkout" class="btn btn-primary mt-2">Checkout</button>
     </div>
-    <div class="row mt-3">
-        <div class="col-md-6 offset-md-3">
-            <div id="seats" class="d-flex flex-wrap justify-content-center"></div>
+    <div class="row mt-3" >
+        <div class="col-md-6 offset-md-4" style="width: 450px;">
+            <div id="seats" class="d-flex flex-wrap" ></div>
         </div>
     </div>
 </div>
@@ -47,8 +50,8 @@
         for (let seatNumber = 1; seatNumber <= seatsPerRow; seatNumber++) {
             const seat = document.createElement("div");
             seat.className = "seat";
-            seat.style.width = "30px";  // Fixed width
-            seat.style.height = "30px"; // Fixed height
+            seat.style.width = "30px";  
+            seat.style.height = "30px"; 
             seat.dataset.rowNumber = rowNumber;
             seat.dataset.seatNumber = seatNumber;
 
@@ -73,11 +76,20 @@
         }
     }
 
+    const movieid = document.getElementById("movieid").value;
+    const screeningid = document.getElementById("screeningid").value;
+
+    const requestData = {
+        movieid: movieid,
+        screeningid: screeningid,
+        selectedSeats: selectedSeats,
+    };
+
     checkoutButton.addEventListener("click", () => {
         // Send selected seats data to the server
-        fetch("{{ url_for('book_tickets') }}", {
+        fetch("{{ url_for('select_seats') }}", {
             method: "POST",
-            body: JSON.stringify(selectedSeats),
+            body: JSON.stringify(requestData),
             headers: {
                 "Content-Type": "application/json",
             },
@@ -93,7 +105,6 @@
         return bookedSeats.some(bookedSeat => bookedSeat.row === row && bookedSeat.seat === seat);
     }
 </script>
-
 
 <style>
     .container {

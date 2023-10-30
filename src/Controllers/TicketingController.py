@@ -135,7 +135,7 @@ class MovieTicketController:
         
         return render_template('./Movies/movie_list.html', movie_list=movie_list, booking_dates=booking_dates)
 
-    def book_tickets(self):
+    def select_seats(self):
         """!
         Book tickets for a movie on behalf of a customer.
 
@@ -144,28 +144,47 @@ class MovieTicketController:
         :param seats: List of seat numbers to book.
         :return: A Booking object representing the booking.
         """
-        
-        movie_id = request.args.get('movieid')
-        screening_id = request.args.get('screeningid')
 
-        movie = self.movie_service.search_movie_by_id(movie_id)
-        screening = self.movie_service.search_screening_by_id(screening_id)
-        
-        booking = BookingViewModel()
-        booking.movie = movie
-        booking.screening = screening
+        booking_view_model = BookingViewModel()
 
-        if request.method=="POST":
-            print("Back here")
-            selected_seats = request.get_json()
-            print(selected_seats)
-            booking.selected_seat_list = selected_seats
+        if request.method == 'POST':
+            post_data = request.get_json()
+            movie_id = post_data['movieid']
+            screening_id = post_data['screeningid']
+            booking_view_model.seat_list = post_data['selectedSeats']
 
+            movie = self.movie_service.search_movie_by_id(movie_id)
+            screening = self.movie_service.search_screening_by_id(screening_id)
             
+            booking_view_model.movie = movie
+            booking_view_model.screening = screening
 
+            return render_template('./Booking/checkout.html', booking=booking_view_model)
 
-        print(booking)
-        return render_template('./Booking/booking.html', booking=booking)
+        else:
+            movie_id = request.args.get('movieid')
+            screening_id = request.args.get('screeningid')
+
+            movie = self.movie_service.search_movie_by_id(movie_id)
+            screening = self.movie_service.search_screening_by_id(screening_id)
+            
+            booking_view_model.movie = movie
+            booking_view_model.screening = screening
+                
+            #print(booking_view_model)
+            return render_template('./Booking/select_seats.html', booking=booking_view_model)
+    
+    def checkout(self):
+        """!
+        Checkout as a customer
+
+        :param movie_title: The title of the movie to book.
+        :param customer_name: The name of the customer making the booking.
+        :param seats: List of seat numbers to book.
+        :return: A Booking object representing the booking.
+        """
+
+        return render_template('./Booking/checkout.html')
 
     def get_available_seats(self, movie_title: str) -> List[int]:
         """!

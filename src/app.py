@@ -30,7 +30,9 @@ def create_app(test_config = None):
 
     app.add_url_rule('/movies/searchscreeninglist', methods=both, view_func=ticketing_controller.search_movie_list_by_screening_date)
 
-    app.add_url_rule('/booking', methods=both, view_func=ticketing_controller.book_tickets)
+    app.add_url_rule('/selectseats', methods=both, view_func=ticketing_controller.select_seats) 
+
+    app.add_url_rule('/checkout', methods=both, view_func=ticketing_controller.checkout) 
 
     DbService.setup_database()
 

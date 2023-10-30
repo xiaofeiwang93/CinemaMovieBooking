@@ -16,7 +16,7 @@ class MovieService:
         movie_list = DbService.read_all_records(DbService.movieDbName)
 
         for movie_info in movie_list:
-            movie_view_model = MovieService.map_movie_model(movie_info)
+            movie_view_model = MovieService.map_movie_view_model(movie_info)
 
             MovieService.get_movie_media(movie_view_model.id, movie_view_model)
             MovieService.get_movie_screenings(movie_view_model.id, movie_view_model)
