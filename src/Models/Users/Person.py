@@ -7,3 +7,4 @@ class Person(ABC):
         self.address = address
         self.email = email
         self.phone = phone
+    

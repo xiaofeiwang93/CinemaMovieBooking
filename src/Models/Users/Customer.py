@@ -1,5 +1,5 @@
-from Models.User import User
-
+from Models.Bookings.Booking import Booking
+from Models.Users.User import User
 
 class Customer(User):
     def __init__(self, username, email):
