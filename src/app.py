@@ -1,5 +1,6 @@
 from flask import Flask
 from Controllers.TicketingController import MovieTicketController
+from Services.AdminService import AdminServce
 from Services.BookingService import BookingService
 from Services.CommonService import CommonService
 from Services.DbService import DbService
@@ -12,7 +13,7 @@ def create_app(test_config = None):
     both=['GET','POST']
 
     app = Flask(__name__, template_folder='views')
-    ticketing_controller = MovieTicketController(DbService, LoginService, CommonService, MovieService, BookingService)
+    ticketing_controller = MovieTicketController(DbService, LoginService, CommonService, MovieService, BookingService, AdminServce)
 
     app.add_url_rule('/', methods=both, view_func=ticketing_controller.login)
 
@@ -38,7 +39,9 @@ def create_app(test_config = None):
 
     app.add_url_rule('/mybookings', methods=both, view_func=ticketing_controller.my_bookings)
 
-    DbService.setup_database()
+    app.add_url_rule('/movie/add', methods=both, view_func=ticketing_controller.add_movie)
+
+    #DbService.setup_database()
 
     return app
 

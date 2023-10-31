@@ -2,6 +2,7 @@ import csv
 from datetime import datetime, timedelta
 import random
 from Models.Movies.Movie import Movie
+from Models.Payments.Coupon import Coupon
 
 from ViewModels.MovieViewModel import MovieViewModel
 
@@ -21,9 +22,11 @@ class DbService:
     bookingDbNameColumns = ["id", "movieid", "screeningid", "hallid", "customerid"]
 
     bookingSeatsDbName = f"{database_path}bookingseats.csv"
-    bookingSeatsDbNameColumns = ["id", "type", "row", "seatnumber", "price", "bookingid"]
+    bookingSeatsDbNameColumns = ["id", "bookingid", "type", "row", "seatnumber", "price", "bookingid"]
 
     date_format = "%d/%m/%Y"
+
+    default_movie_media = "../../static/Cards/default.jpg"
 
     # Function to create the initial CSV file
     def create_csv_file(databaseName, columnNameList):
@@ -66,6 +69,7 @@ class DbService:
                     writer.writeheader()
 
                 writer.writerow(record)
+                return True
         except FileNotFoundError:
             print(f"File '{filename}' not found.")
         except Exception as e:
@@ -123,6 +127,25 @@ class DbService:
         except Exception as e:
             print(f"An error occurred while reading records: {str(e)}")
             return []
+
+    def validate_coupon(couponid):
+        """!
+        Check if the coupon is valid. 
+
+        :param coupon: The coupon to be checked.
+        :return: True if the coupon is valid, False otherwise.
+        """
+
+        if couponid == "validcoupon":
+            coupon = Coupon(
+                coupon_id=couponid,
+                expiry_date=None,
+                discount=0.8
+            )
+
+            return "Valid"
+        
+        return "Invalid"
 
     # Function to update a record by ID
     def update_record_by_id(update_id, new_data, columnNameList, tableName):
@@ -346,7 +369,104 @@ class DbService:
 
     def db_initial_setup_booking():
         DbService.create_csv_file(DbService.bookingDbName, DbService.bookingDbNameColumns)
+        DbService.db_initial_insert_booking()
         DbService.create_csv_file(DbService.bookingSeatsDbName, DbService.bookingSeatsDbNameColumns)
+        DbService.db_initial_insert_booking_seats()
+
+    def db_initial_insert_booking():
+        """!
+        Dynamically generate booking records for test purposes
+
+        :param date: None
+        :return: None
+        """
+        bookings = [
+            {
+                'movieid': '1',
+                'screeningid': '1',
+                'hallid': '1',
+                'customerid': '1'
+            },
+            {
+                'movieid': '2',
+                'screeningid': '2',
+                'hallid': '2',
+                'customerid': '2'
+            },
+            {
+                'movieid': '3',
+                'screeningid': '3',
+                'hallid': '3',
+                'customerid': '3'
+            },
+            {
+                'movieid': '4',
+                'screeningid': '4',
+                'hallid': '4',
+                'customerid': '4'
+            },
+            {
+                'movieid': '5',
+                'screeningid': '5',
+                'hallid': '5',
+                'customerid': '5'
+            },
+            {
+                'movieid': '6',
+                'screeningid': '6',
+                'hallid': '6',
+                'customerid': '6'
+            },
+            {
+                'movieid': '7',
+                'screeningid': '7',
+                'hallid': '7',
+                'customerid': '7'
+            },
+            {
+                'movieid': '8',
+                'screeningid': '8',
+                'hallid': '8',
+                'customerid': '8'
+            }
+        ]
+
+        for record in bookings:
+            DbService.add_record(DbService.bookingDbName, record, DbService.bookingDbNameColumns)
+
+    def db_initial_insert_booking_seats():
+        """!
+        Dynamically generate seats records for test purposes
+
+        :param date: None
+        :return: None
+        """
+        seats = [
+            {
+                'type': 'Adult',
+                'bookingid': 1,
+                'row': '1',
+                'seatnumber': '1',
+                'price': 10,
+            },
+            {
+                'type': 'Adult',
+                'bookingid': 1,
+                'row': '1',
+                'seatnumber': '2',
+                'price': 10,
+            },
+            {
+                'type': 'Adult',
+                'bookingid': 1,
+                'row': '1',
+                'seatnumber': '3',
+                'price': 10,
+            }
+        ]
+
+        for record in seats:
+            DbService.add_record(DbService.bookingSeatsDbName, record, DbService.bookingSeatsDbNameColumns)
 
     def setup_database():
         DbService.db_initial_setup_movie()

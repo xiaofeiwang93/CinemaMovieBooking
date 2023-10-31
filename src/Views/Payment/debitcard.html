@@ -1,5 +1,22 @@
 {% extends "./Common/layout_view.html" %}
 {% block content %}
+{% if check_coupon == 'Valid' %}
+    <div id="liveAlertPlaceholder" style="margin: 10px 0 10px 0;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Coupon applied! Enjoy your 20% off!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    {% elif check_coupon == 'Invalid' %}
+    <div id="liveAlertPlaceholder" style="margin: 10px 0 10px 0;">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Coupon is not valid. Please try next time.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    {% else %}
+    <div></div>
+{% endif %}
 <div class="container mt-4">
     <h1 style="margin: 20px 0 20px 0;">Debit Card Payment</h1>
     <form method="post" action="{{ url_for('my_bookings') }}">

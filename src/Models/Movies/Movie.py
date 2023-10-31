@@ -87,6 +87,22 @@ class Movie:
 
     def getSscreenings(self):
         return self.__screening_list
+    
+    def to_dict(self):
+        """!
+        @brief Converts the MovieModel object to a dictionary.
+
+        @return A dictionary representing the MovieModel object.
+        """
+        return {
+            "title": self.__title,
+            "description": self.__description,
+            "duration_mins": self.__duration_mins,
+            "language": self.__language,
+            "release_date": self.__release_date,
+            "country": self.__country,
+            "genre": self.__genre
+        }
 
     def __str__(self):
         return f"Movie: title={self.__title}, description={self.__description}, duration_mins={self.__duration_mins}, language={self.__language}, release_date={self.__release_date}, country={self.__country}, genre={self.__genre}, screening_list={self.__screening_list}"

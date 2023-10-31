@@ -15,8 +15,7 @@
         <div class="mb-3">
             <label for="coupon" class="form-label">Coupon Code</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="coupon" placeholder="Enter coupon code">
-                <button type="button" class="btn btn-outline-dark">Apply</button>
+                <input type="text" class="form-control" name="couponid" id="couponid" placeholder="Valid Coupon is 'validcoupon'">
             </div>
         </div>
 
@@ -40,6 +39,7 @@
         <h4>Total: ${{booking.total_price}}</h4>
         <button type="submit" class="btn btn-outline-dark mt-3" name="payment_method" value="credit_card">Pay with Credit Card</button>
         <button type="submit" class="btn btn-outline-dark mt-3" name="payment_method" value="debit_card">Pay with Debit Card</button>
+        <button type="submit" class="btn btn-outline-dark mt-3" name="payment_method" value="cash">Pay with Cash</button>
     </form>
 </div>
 

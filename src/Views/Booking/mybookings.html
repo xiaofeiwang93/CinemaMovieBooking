@@ -1,9 +1,25 @@
 {% extends "./Common/layout_view.html" %}
 {% block content %}
 
-
 <div class="container">
     <h1 class="mt-4 mb-4">Booking List</h1>
+    {% if payment_method == 'cash' %}
+    <div id="liveAlertPlaceholder" style="margin: 10px 0 10px 0;">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Please pay at the counter before the movie starts.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    {% else %}
+    <div id="liveAlertPlaceholder" style="margin: 10px 0 10px 0;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            All booked in! Enjoy the movie!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    {% endif %}
+    <!-- Bookings Table -->
+    <h2>Bookings</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,6 +29,7 @@
                 <th>Movie</th>
                 <th>Seats</th>
                 <th>Total Price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,14 +40,35 @@
                 <td>Movie Title 1</td>
                 <td>2</td>
                 <td>$20.00</td>
+                <td><button type="button" class="btn btn-outline-dark">Cancel</button></td>
             </tr>
+            <!-- Add more booking rows as needed -->
+        </tbody>
+    </table>
+
+    <!-- Past Bookings Table -->
+    <h2>Past Bookings</h2>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>2023-10-31</td>
-                <td>Jane Smith</td>
-                <td>janesmith@example.com</td>
-                <td>Movie Title 2</td>
-                <td>4</td>
-                <td>$40.00</td>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Movie</th>
+                <th>Seats</th>
+                <th>Total Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023-10-15</td>
+                <td>Alice Johnson</td>
+                <td>alice@example.com</td>
+                <td>Movie Title 3</td>
+                <td>3</td>
+                <td>$30.00</td>
+                <th></th>
             </tr>
         </tbody>
     </table>

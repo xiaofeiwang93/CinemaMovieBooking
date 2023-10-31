@@ -32,4 +32,7 @@ class Coupon:
     @discount.setter
     def discount(self, value):
         self.__discount = value
+    
+    def __str__(self):
+        return f"Coupon ID: {self.__coupon_id}\nExpiry Date: {self.__expiry_date}\nDiscount: {self.__discount}"
 

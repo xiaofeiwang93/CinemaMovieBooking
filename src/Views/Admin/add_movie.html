@@ -1,0 +1,39 @@
+{% extends "./Common/layout_view.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h1>Add Movie</h1>
+    <form method="post" action="{{ url_for('add_movie') }}">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Enter movie title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" placeholder="Enter movie description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration (mins)</label>
+            <input type="number" class="form-control" name="duration" id="duration" placeholder="Enter duration in minutes" required>
+        </div>
+        <div class="mb-3">
+            <label for="language" class="form-label">Language</label>
+            <input type="text" class="form-control" name="language" id="language" placeholder="Enter movie language" required>
+        </div>
+        <div class="mb-3">
+            <label for="releaseDate" class="form-label">Release Date</label>
+            <input type="date" class="form-control" name="releaseDate" id="releaseDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" name="country" id="country" placeholder="Enter movie country" required>
+        </div>
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" name="genre" id="genre" placeholder="Enter movie genre" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+</div>
+
+{% endblock %}

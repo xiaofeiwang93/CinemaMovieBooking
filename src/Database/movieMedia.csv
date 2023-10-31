@@ -7,3 +7,4 @@ id,movieid,cardsrcaddress,detailbanneraddress
 6,6,../../static/Cards/Oppenheimer.jpg,../static/MovieDetailBanner/Oppenheimer.jpg
 7,7,../../static/Cards/SawX.jpg,../static/MovieDetailBanner/SawX.jpg
 8,8,../../static/Cards/TheCreator.jpg,../static/MovieDetailBanner/TheCreator.jpg
+9,9,../../static/Cards/TheCreator.jpg,../static/MovieDetailBanner/TheCreator.jpg

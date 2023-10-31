@@ -1,1 +1,4 @@
-id,type,row,seatnumber,price,bookingid
+id,bookingid,type,row,seatnumber,price,bookingid
+1,1,Adult,1,1,10,1
+2,1,Adult,1,2,10,1
+3,1,Adult,1,3,10,1

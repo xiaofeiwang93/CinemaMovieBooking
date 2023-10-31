@@ -1,100 +1,103 @@
 from datetime import date
 
 class Booking:
-    def __init__(self, booking_num, customer, number_of_seats, created_on, status, screening_seat_info, screening_detail, seats, order_total):
-        self.__booking_num = booking_num
-        self.__customer = customer
-        self.__number_of_seats = number_of_seats
-        self.__created_on = created_on
-        self.__status = status
-        self.__screening_seat_info = screening_seat_info
-        self.__screening_detail = screening_detail
-        self.__seats = seats
-        self.__order_total = order_total
-
-    # Getter and setter for booking_num
+    def __init__(self):
+        self.__movieid = None
+        self.__screeningid = None
+        self.__hallid = None
+        self.__customerid = None
+    
     @property
-    def booking_num(self):
-        return self.__booking_num
+    def movieid(self):
+        """!
+        @brief Getter for the booking's movie ID property.
 
-    @booking_num.setter
-    def booking_num(self, value):
-        self.__booking_num = value
+        @return The movie ID of the booking.
+        """
+        return self.__movieid
+    
+    @movieid.setter
+    def movieid(self, value):
+        """!
+        @brief Setter for the booking's movie ID property.
 
-    # Getter and setter for customer
+        @param value: The movie ID of the booking.
+        """
+        self.__movieid = value
+
     @property
-    def customer(self):
-        return self.__customer
+    def screeningid(self):
+        """!
+        @brief Getter for the booking's screening ID property.
 
-    @customer.setter
-    def customer(self, value):
-        self.__customer = value
+        @return The screening ID of the booking.
+        """
+        return self.__screeningid
+    
+    @screeningid.setter
+    def screeningid(self, value):
+        """!
+        @brief Setter for the booking's screening ID property.
 
-    # Getter and setter for number_of_seats
+        @param value: The screening ID of the booking.
+        """
+        self.__screeningid = value
+
+
     @property
-    def number_of_seats(self):
-        return self.__number_of_seats
+    def hallid(self):
+        """!
+        @brief Getter for the booking's hall ID property.
 
-    @number_of_seats.setter
-    def number_of_seats(self, value):
-        self.__number_of_seats = value
+        @return The hall ID of the booking.
+        """
+        return self.__hallid
+    
+    @hallid.setter
+    def hallid(self, value):
+        """!
+        @brief Setter for the booking's hall ID property.
 
-    # Getter and setter for created_on
+        @param value: The hall ID of the booking.
+        """
+        self.__hallid = value
+
     @property
-    def created_on(self):
-        return self.__created_on
+    def customerid(self):
+        """!
+        @brief Getter for the booking's customer ID property.
 
-    @created_on.setter
-    def created_on(self, value):
-        self.__created_on = value
+        @return The customer ID of the booking.
+        """
+        return self.__customerid
+    
+    @customerid.setter
+    def customerid(self, value):
+        """!
+        @brief Setter for the booking's customer ID property.
 
-    # Getter and setter for status
-    @property
-    def status(self):
-        return self.__status
+        @param value: The customer ID of the booking.
+        """
+        self.__customerid = value
 
-    @status.setter
-    def status(self, value):
-        self.__status = value
+    def to_dict(self):
+                """!
+                @brief Convert the booking object to a dictionary.
 
-    # Getter and setter for screening_seat_info
-    @property
-    def screening_seat_info(self):
-        return self.__screening_seat_info
+                @return A dictionary containing the booking's details.
+                """
+                return {
+                    "movieid": self.movieid,
+                    "screeningid": self.screeningid,
+                    "hallid": self.hallid,
+                    "customerid": self.customerid
+                }
 
-    @screening_seat_info.setter
-    def screening_seat_info(self, value):
-        self.__screening_seat_info = value
+    def __str__(self):
+        """!
+        @brief String representation of the booking.
 
-    # Getter and setter for screening_detail
-    @property
-    def screening_detail(self):
-        return self.__screening_detail
-
-    @screening_detail.setter
-    def screening_detail(self, value):
-        self.__screening_detail = value
-
-    # Getter and setter for seats
-    @property
-    def seats(self):
-        return self.__seats
-
-    @seats.setter
-    def seats(self, value):
-        self.__seats = value
-
-    # Getter and setter for order_total
-    @property
-    def order_total(self):
-        return self.__order_total
-
-    @order_total.setter
-    def order_total(self, value):
-        self.__order_total = value
-
-    def sendNotification(self):
-        # Implement the sendNotification method
-        # This method may send a notification to the customer regarding the booking
-        # You can customize the notification logic based on your requirements
-        pass
+        @return A string containing the booking's details.
+        """
+        return f"Movie: {self.movieid}\nScreening: {self.screeningid}\nHall: {self.hallid}\nCustomer: {self.customerid}"
+    
