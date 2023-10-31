@@ -6,6 +6,8 @@ class BookingViewModel:
         self._hall = None
         self._screening = None
         self._seat_list = None
+        self._seat_count = None
+        self._total_price = None
     
     @property
     def id(self):
@@ -114,6 +116,42 @@ class BookingViewModel:
         @param value: The seat_list of the booking.
         """
         self._seat_list = value
+    
+    @property
+    def seat_count(self):
+        """!
+        @brief Getter for the booking's seat_count property.
+
+        @return The seat_count of the booking.
+        """
+        return self._seat_count
+    
+    @seat_count.setter
+    def seat_count(self, value):
+        """!
+        @brief Setter for the booking's seat_count property.
+
+        @param value: The seat_count of the booking.
+        """
+        self._seat_count = value
+
+    @property
+    def total_price(self):
+        """!
+        @brief Getter for the booking's total_price property.
+
+        @return The total_price of the booking.
+        """
+        return self._total_price
+    
+    @total_price.setter
+    def total_price(self, value):
+        """!
+        @brief Setter for the booking's total_price property.
+
+        @param value: The total_price of the booking.
+        """
+        self._total_price = value
     
     def __str__(self):
         """!

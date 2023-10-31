@@ -16,6 +16,16 @@ class CommonService:
                 dates[date.strftime("%a %d/%m")] = date.strftime("%d/%m/%Y")
         return dates
     
+    def generate_seats():
+        seating_arrangement = {}
+
+        for row in range(1, 3):  # Two rows
+            for seat in range(1, 11):  # Ten seats in each row
+                seat_number = (row - 1) * 10 + seat  # Calculate a unique seat number
+                seating_arrangement[seat_number] = {"row": row, "seat": seat}
+        
+        return seating_arrangement
+    
 
     def  raise_error(e):
         print(e)

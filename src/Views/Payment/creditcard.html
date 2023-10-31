@@ -1,0 +1,25 @@
+{% extends "./Common/layout_view.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 style="margin: 20px 0 20px 0;">Credit Card Payment</h1>
+    <form method="post" action="{{ url_for('my_bookings') }}">
+        <div class="mb-3">
+            <label for="creditCardNumber" class="form-label">Credit Card Number</label>
+            <input type="text" class="form-control" id="creditCardNumber" placeholder="Enter your credit card number" required>
+        </div>
+        <div class="mb-3">
+            <label for="cardType" class="form-label">Card Type</label>
+            <input type="text" class="form-control" id="cardType" placeholder="Enter card type" required>
+        </div>
+        <div class="mb-3">
+            <label for="expiryDate" class="form-label">Expiry Date</label>
+            <input type="text" class="form-control" id="expiryDate" placeholder="Enter expiry date" required>
+        </div>
+        <div class="mb-3">
+            <label for="nameOnCard" class="form-label">Name on Card</label>
+            <input type="text" class="form-control" id="nameOnCard" placeholder="Enter name on card" required>
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Submit Payment</button>
+    </form>
+</div>
+{% endblock %}

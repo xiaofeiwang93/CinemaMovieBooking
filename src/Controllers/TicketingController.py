@@ -1,14 +1,14 @@
 from datetime import datetime
 from typing import List
 
-from flask import jsonify, render_template, request
+from flask import jsonify, redirect, render_template, request, url_for
 from Models.Bookings.Booking import Booking
 from Models.Movies.Movie import Movie
 from Models.Movies.Screening import Screening
 from ViewModels.BookingViewModel import BookingViewModel
 
 class MovieTicketController:
-    def __init__(self, db_service, login_service, common_service, movie_service) -> None:
+    def __init__(self, db_service, login_service, common_service, movie_service, booking_service) -> None:
         """!
         Constructor for the MovieTicketController class. Implement the Inversion of Control (IoC) principle here via Dependency Injection - constructor injection.
 
@@ -18,6 +18,7 @@ class MovieTicketController:
         self.login_service = login_service
         self.common_service = common_service
         self.movie_service = movie_service
+        self.booking_service = booking_service
 
     def login(self):
         self.login_service.login()
@@ -146,34 +147,21 @@ class MovieTicketController:
         """
 
         booking_view_model = BookingViewModel()
+        movie_id = request.args.get('movieid')
+        screening_id = request.args.get('screeningid')
 
-        if request.method == 'POST':
-            post_data = request.get_json()
-            movie_id = post_data['movieid']
-            screening_id = post_data['screeningid']
-            booking_view_model.seat_list = post_data['selectedSeats']
+        movie = self.movie_service.search_movie_by_id(movie_id)
+        screening = self.movie_service.search_screening_by_id(screening_id)
+        
+        booking_view_model.movie = movie
+        booking_view_model.screening = screening
+        
+        seats = self.common_service.generate_seats()
+        print(seats)
 
-            movie = self.movie_service.search_movie_by_id(movie_id)
-            screening = self.movie_service.search_screening_by_id(screening_id)
-            
-            booking_view_model.movie = movie
-            booking_view_model.screening = screening
+        return render_template('./Booking/select_seats.html', booking=booking_view_model, seats = seats)
+        
 
-            return render_template('./Booking/checkout.html', booking=booking_view_model)
-
-        else:
-            movie_id = request.args.get('movieid')
-            screening_id = request.args.get('screeningid')
-
-            movie = self.movie_service.search_movie_by_id(movie_id)
-            screening = self.movie_service.search_screening_by_id(screening_id)
-            
-            booking_view_model.movie = movie
-            booking_view_model.screening = screening
-                
-            #print(booking_view_model)
-            return render_template('./Booking/select_seats.html', booking=booking_view_model)
-    
     def checkout(self):
         """!
         Checkout as a customer
@@ -183,17 +171,48 @@ class MovieTicketController:
         :param seats: List of seat numbers to book.
         :return: A Booking object representing the booking.
         """
+        
+        selected_seats = []
+        for key, value in request.form.items():
+            selected_seats.append(key)
 
-        return render_template('./Booking/checkout.html')
+        booking_view_model = BookingViewModel()
 
-    def get_available_seats(self, movie_title: str) -> List[int]:
+        movie_id = request.args.get('movieid')
+        screening_id = request.args.get('screeningid')
+
+        movie = self.movie_service.search_movie_by_id(movie_id)
+        screening = self.movie_service.search_screening_by_id(screening_id)
+        
+        booking_view_model.movie = movie
+        booking_view_model.screening = screening
+
+        booking_view_model.seats = selected_seats
+        booking_view_model.seat_count = len(selected_seats)
+        booking_view_model.total_price = len(selected_seats) * 10
+        
+        return render_template('./Booking/checkout.html', booking=booking_view_model)
+    
+    def make_payment(self):
         """!
-        Get a list of available seats for a specific movie.
+        Make payment for the booking.
 
-        :param movie_title: The title of the movie for which to retrieve available seats.
-        :return: List of available seat numbers.
+        :param booking: The booking to be paid for.
+        :return: A Booking object representing the booking.
         """
-        pass
+        self.booking_service.make_payment()
+        return render_template('./Payment/creditcard.html')
+            
+
+    def my_bookings(self):
+        """!
+        View a list of bookings made by a customer.
+
+        :param customer_name: The name of the customer for whom to retrieve bookings.
+        :return: List of Booking objects made by the customer.
+        """
+        #booking_list = self.booking_service.get_customer_bookings("test")
+        return render_template('./Booking/mybookings.html')
 
     def get_customer_bookings(self, customer_name: str) -> List[Booking]:
         """!

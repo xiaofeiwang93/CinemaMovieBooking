@@ -1,0 +1,40 @@
+{% extends "./Common/layout_view.html" %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Booking List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Movie</th>
+                <th>Seats</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023-10-31</td>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+                <td>Movie Title 1</td>
+                <td>2</td>
+                <td>$20.00</td>
+            </tr>
+            <tr>
+                <td>2023-10-31</td>
+                <td>Jane Smith</td>
+                <td>janesmith@example.com</td>
+                <td>Movie Title 2</td>
+                <td>4</td>
+                <td>$40.00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
