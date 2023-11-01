@@ -7,7 +7,7 @@ class AdminServce:
         """!
         Add a movie to the database.
 
-        :param movie: The movie to be added.
+        @param movie: The movie to be added.
         """
 
         is_movie_added = DbService.add_record(DbService.movieDbName, movie.to_dict(), DbService.movieDbColumns)

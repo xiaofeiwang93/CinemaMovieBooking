@@ -10,7 +10,7 @@ class BookingService:
         """!
         Save a booking to the database.
 
-        :param booking: The booking to be saved.
+        @param booking: The booking to be saved.
         """
         DbService.add_record(DbService.bookingDbName, booking.to_dict(), DbService.bookingDbNameColumns)
 
@@ -18,8 +18,8 @@ class BookingService:
         """!
         View bookings from the database.
 
-        :param 
-        :return: A List of Booking model object representing the booking.
+        @param 
+        @return: A List of Booking model object representing the booking.
         """
         booking = DbService.read_all_records(DbService.bookingDbName)
 
@@ -30,8 +30,8 @@ class BookingService:
         """!
         Make payment for the booking. In this case, we just print a message and return True. In a real application, we would use a payment gateway to process the payment.
 
-        :param booking: The booking to be paid for.
-        :return: A Booking object representing the booking.
+        @param booking: The booking to be paid for.
+        @return: A Booking object representing the booking.
         """
 
         print("Payment made")
@@ -41,8 +41,8 @@ class BookingService:
         """!
         Check if the coupon is valid.
 
-        :param coupon: The coupon to be checked.
-        :return: Coupon model object if the coupon is valid, None otherwise.
+        @param coupon: The coupon to be checked.
+        @return: Coupon model object if the coupon is valid, None otherwise.
         """
 
         return DbService.validate_coupon(couponid)

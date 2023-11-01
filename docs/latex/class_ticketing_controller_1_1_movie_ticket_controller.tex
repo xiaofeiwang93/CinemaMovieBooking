@@ -75,7 +75,12 @@ Constructor for the Movie\+Ticket\+Controller class.
 
 Implement the Inversion of Control (IoC) principle here via Dependency Injection -\/ constructor injection.
 
-\+:param ticket\+\_\+system\+: An instance of the Movie\+Ticket\+System. 
+
+\begin{DoxyParams}{Parameters}
+{\em ticket\+\_\+system} & An instance of the Movie\+Ticket\+System. \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a35c654dab6360b93848feb246388ef57}\label{class_ticketing_controller_1_1_movie_ticket_controller_a35c654dab6360b93848feb246388ef57} 
@@ -88,7 +93,12 @@ Implement the Inversion of Control (IoC) principle here via Dependency Injection
 
 Add a movie to the database. 
 
-\+:param movie\+: The movie to be added. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a}\label{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a} 
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & The movie to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a}\label{class_ticketing_controller_1_1_movie_ticket_controller_aed689cbe058b5ce39dab5f247860e06a} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!cancel\_booking@{cancel\_booking}}
 \index{cancel\_booking@{cancel\_booking}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{cancel\_booking()}{cancel\_booking()}}
@@ -98,7 +108,12 @@ Add a movie to the database.
 
 Cancel a booking and provide a refund to the customer. 
 
-\+:param booking\+: The booking to be canceled. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ae30cbc0be9628819c297497c3e32e30c}\label{class_ticketing_controller_1_1_movie_ticket_controller_ae30cbc0be9628819c297497c3e32e30c} 
+
+\begin{DoxyParams}{Parameters}
+{\em booking} & The booking to be canceled. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ae30cbc0be9628819c297497c3e32e30c}\label{class_ticketing_controller_1_1_movie_ticket_controller_ae30cbc0be9628819c297497c3e32e30c} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!checkout@{checkout}}
 \index{checkout@{checkout}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{checkout()}{checkout()}}
@@ -108,7 +123,19 @@ Cancel a booking and provide a refund to the customer.
 
 Checkout as a customer. 
 
-\+:param movie\+\_\+title\+: The title of the movie to book. \+:param customer\+\_\+name\+: The name of the customer making the booking. \+:param seats\+: List of seat numbers to book. \+:return\+: A Booking object representing the booking. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db}\label{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db} 
+
+\begin{DoxyParams}{Parameters}
+{\em movie\+\_\+title} & The title of the movie to book. \\
+\hline
+{\em customer\+\_\+name} & The name of the customer making the booking. \\
+\hline
+{\em seats} & List of seat numbers to book. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A Booking object representing the booking. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db}\label{class_ticketing_controller_1_1_movie_ticket_controller_a2a9d9c7aac652cb2450a95f195ce97db} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!get\_customer\_bookings@{get\_customer\_bookings}}
 \index{get\_customer\_bookings@{get\_customer\_bookings}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{get\_customer\_bookings()}{get\_customer\_bookings()}}
@@ -118,7 +145,15 @@ Checkout as a customer.
 
 Get a list of bookings made by a specific customer. 
 
-\+:param customer\+\_\+name\+: The name of the customer for whom to retrieve bookings. \+:return\+: List of Booking objects made by the customer. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aa3a8eb50650aac68f9c087b2ce87e9e9}\label{class_ticketing_controller_1_1_movie_ticket_controller_aa3a8eb50650aac68f9c087b2ce87e9e9} 
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+\_\+name} & The name of the customer for whom to retrieve bookings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Booking objects made by the customer. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aa3a8eb50650aac68f9c087b2ce87e9e9}\label{class_ticketing_controller_1_1_movie_ticket_controller_aa3a8eb50650aac68f9c087b2ce87e9e9} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!home@{home}}
 \index{home@{home}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{home()}{home()}}
@@ -128,7 +163,12 @@ Get a list of bookings made by a specific customer.
 
 home page 
 
-\+:param ticket\+\_\+system\+: None. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_af6cb93c2571a89d0a917104cf0cedbf7}\label{class_ticketing_controller_1_1_movie_ticket_controller_af6cb93c2571a89d0a917104cf0cedbf7} 
+
+\begin{DoxyParams}{Parameters}
+{\em ticket\+\_\+system} & None. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_af6cb93c2571a89d0a917104cf0cedbf7}\label{class_ticketing_controller_1_1_movie_ticket_controller_af6cb93c2571a89d0a917104cf0cedbf7} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!make\_payment@{make\_payment}}
 \index{make\_payment@{make\_payment}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{make\_payment()}{make\_payment()}}
@@ -138,7 +178,15 @@ home page
 
 Make payment for the booking. 
 
-\+:param booking\+: The booking to be paid for. \+:return\+: A Booking object representing the booking. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ae2e6814716f37b4a670ac4bbffd1531b}\label{class_ticketing_controller_1_1_movie_ticket_controller_ae2e6814716f37b4a670ac4bbffd1531b} 
+
+\begin{DoxyParams}{Parameters}
+{\em booking} & The booking to be paid for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A Booking object representing the booking. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ae2e6814716f37b4a670ac4bbffd1531b}\label{class_ticketing_controller_1_1_movie_ticket_controller_ae2e6814716f37b4a670ac4bbffd1531b} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!my\_bookings@{my\_bookings}}
 \index{my\_bookings@{my\_bookings}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{my\_bookings()}{my\_bookings()}}
@@ -148,7 +196,15 @@ Make payment for the booking.
 
 View a list of bookings made by a customer. 
 
-\+:param customer\+\_\+name\+: The name of the customer for whom to retrieve bookings. \+:return\+: List of Booking objects made by the customer. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_acc6f453a812212e18af7cb7af2f90deb}\label{class_ticketing_controller_1_1_movie_ticket_controller_acc6f453a812212e18af7cb7af2f90deb} 
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+\_\+name} & The name of the customer for whom to retrieve bookings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Booking objects made by the customer. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_acc6f453a812212e18af7cb7af2f90deb}\label{class_ticketing_controller_1_1_movie_ticket_controller_acc6f453a812212e18af7cb7af2f90deb} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!process\_payment@{process\_payment}}
 \index{process\_payment@{process\_payment}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{process\_payment()}{process\_payment()}}
@@ -158,7 +214,15 @@ View a list of bookings made by a customer.
 
 Process payment for the booking. 
 
-\+:param booking\+: The booking to be paid for. \+:return\+: A Booking object representing the booking. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ac15d26ad5a23b978361598e5ca642247}\label{class_ticketing_controller_1_1_movie_ticket_controller_ac15d26ad5a23b978361598e5ca642247} 
+
+\begin{DoxyParams}{Parameters}
+{\em booking} & The booking to be paid for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A Booking object representing the booking. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ac15d26ad5a23b978361598e5ca642247}\label{class_ticketing_controller_1_1_movie_ticket_controller_ac15d26ad5a23b978361598e5ca642247} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!search\_movie\_by\_screening\_date@{search\_movie\_by\_screening\_date}}
 \index{search\_movie\_by\_screening\_date@{search\_movie\_by\_screening\_date}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{search\_movie\_by\_screening\_date()}{search\_movie\_by\_screening\_date()}}
@@ -168,7 +232,15 @@ Process payment for the booking.
 
 Search for screening based on screening date. 
 
-\+:param date\+: The date of the movie to search for. \+:return\+: List of Movie objects matching the search criteria. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ad8f43c23f89c66873895030f28b4c0c4}\label{class_ticketing_controller_1_1_movie_ticket_controller_ad8f43c23f89c66873895030f28b4c0c4} 
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The date of the movie to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Movie objects matching the search criteria. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ad8f43c23f89c66873895030f28b4c0c4}\label{class_ticketing_controller_1_1_movie_ticket_controller_ad8f43c23f89c66873895030f28b4c0c4} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!search\_movie\_list\_by\_screening\_date@{search\_movie\_list\_by\_screening\_date}}
 \index{search\_movie\_list\_by\_screening\_date@{search\_movie\_list\_by\_screening\_date}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{search\_movie\_list\_by\_screening\_date()}{search\_movie\_list\_by\_screening\_date()}}
@@ -178,7 +250,15 @@ Search for screening based on screening date.
 
 Search for list of screening based on screening date. 
 
-\+:param date\+: The date of the movie to search for. \+:return\+: List of Movie objects matching the search criteria -- only return the movies that have screening for the selected date. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a628d951b1dcf44bca74e751cef2e5954}\label{class_ticketing_controller_1_1_movie_ticket_controller_a628d951b1dcf44bca74e751cef2e5954} 
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The date of the movie to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Movie objects matching the search criteria -- only return the movies that have screening for the selected date. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a628d951b1dcf44bca74e751cef2e5954}\label{class_ticketing_controller_1_1_movie_ticket_controller_a628d951b1dcf44bca74e751cef2e5954} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!search\_movies@{search\_movies}}
 \index{search\_movies@{search\_movies}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{search\_movies()}{search\_movies()}}
@@ -188,7 +268,21 @@ Search for list of screening based on screening date.
 
 Search for movies based on title, language, genre, and release date. 
 
-\+:param title\+: The title of the movie to search for. \+:param language\+: The language of the movie. \+:param genre\+: The genre of the movie. \+:param release\+\_\+date\+: The release date of the movie. \+:return\+: List of Movie objects matching the search criteria. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aedbfb46ccd3ed3d342161f5909ac5b44}\label{class_ticketing_controller_1_1_movie_ticket_controller_aedbfb46ccd3ed3d342161f5909ac5b44} 
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the movie to search for. \\
+\hline
+{\em language} & The language of the movie. \\
+\hline
+{\em genre} & The genre of the movie. \\
+\hline
+{\em release\+\_\+date} & The release date of the movie. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Movie objects matching the search criteria. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_aedbfb46ccd3ed3d342161f5909ac5b44}\label{class_ticketing_controller_1_1_movie_ticket_controller_aedbfb46ccd3ed3d342161f5909ac5b44} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!search\_movies\_by\_title@{search\_movies\_by\_title}}
 \index{search\_movies\_by\_title@{search\_movies\_by\_title}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{search\_movies\_by\_title()}{search\_movies\_by\_title()}}
@@ -198,7 +292,15 @@ Search for movies based on title, language, genre, and release date.
 
 Search for movies based on title. 
 
-\+:param title\+: The title of the movie to search for. \+:return\+: List of Movie objects matching the search criteria. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ab1093ae3090cb0df23efc8858af2bffb}\label{class_ticketing_controller_1_1_movie_ticket_controller_ab1093ae3090cb0df23efc8858af2bffb} 
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the movie to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: List of Movie objects matching the search criteria. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_ab1093ae3090cb0df23efc8858af2bffb}\label{class_ticketing_controller_1_1_movie_ticket_controller_ab1093ae3090cb0df23efc8858af2bffb} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!select\_seats@{select\_seats}}
 \index{select\_seats@{select\_seats}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{select\_seats()}{select\_seats()}}
@@ -208,7 +310,19 @@ Search for movies based on title.
 
 Book tickets for a movie on behalf of a customer. 
 
-\+:param movie\+\_\+title\+: The title of the movie to book. \+:param customer\+\_\+name\+: The name of the customer making the booking. \+:param seats\+: List of seat numbers to book. \+:return\+: A Booking object representing the booking. \Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a4bf987dc3649c87235d8e7b179aac509}\label{class_ticketing_controller_1_1_movie_ticket_controller_a4bf987dc3649c87235d8e7b179aac509} 
+
+\begin{DoxyParams}{Parameters}
+{\em movie\+\_\+title} & The title of the movie to book. \\
+\hline
+{\em customer\+\_\+name} & The name of the customer making the booking. \\
+\hline
+{\em seats} & List of seat numbers to book. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A Booking object representing the booking. 
+\end{DoxyReturn}
+\Hypertarget{class_ticketing_controller_1_1_movie_ticket_controller_a4bf987dc3649c87235d8e7b179aac509}\label{class_ticketing_controller_1_1_movie_ticket_controller_a4bf987dc3649c87235d8e7b179aac509} 
 \index{TicketingController.MovieTicketController@{TicketingController.MovieTicketController}!view\_movie\_detail@{view\_movie\_detail}}
 \index{view\_movie\_detail@{view\_movie\_detail}!TicketingController.MovieTicketController@{TicketingController.MovieTicketController}}
 \doxysubsubsection{\texorpdfstring{view\_movie\_detail()}{view\_movie\_detail()}}
@@ -218,7 +332,15 @@ Book tickets for a movie on behalf of a customer.
 
 Search for movies based on id. 
 
-\+:param id\+: The id of the movie. \+:return\+: A Movie objects matching the id. 
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the movie. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A Movie objects matching the id. 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

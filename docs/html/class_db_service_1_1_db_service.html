@@ -83,8 +83,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac4cae8af08d3785e24ad0ec17c55633" id="r_aac4cae8af08d3785e24ad0ec17c55633"><td class="memItemLeft" align="right" valign="top"><a id="aac4cae8af08d3785e24ad0ec17c55633" name="aac4cae8af08d3785e24ad0ec17c55633"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>create_csv_file</b> (databaseName, columnNameList)</td></tr>
+<tr class="memitem:aac4cae8af08d3785e24ad0ec17c55633" id="r_aac4cae8af08d3785e24ad0ec17c55633"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_service_1_1_db_service.html#aac4cae8af08d3785e24ad0ec17c55633">create_csv_file</a> (databaseName, columnNameList)</td></tr>
+<tr class="memdesc:aac4cae8af08d3785e24ad0ec17c55633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a CSV file with the given name and column names.  <br /></td></tr>
 <tr class="separator:aac4cae8af08d3785e24ad0ec17c55633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e48a353fb1833381f945fd16272f97a" id="r_a6e48a353fb1833381f945fd16272f97a"><td class="memItemLeft" align="right" valign="top"><a id="a6e48a353fb1833381f945fd16272f97a" name="a6e48a353fb1833381f945fd16272f97a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>get_next_id</b> (filename)</td></tr>
@@ -184,6 +184,43 @@ str&#160;</td><td class="memItemRight" valign="bottom"><b>default_movie_media</b
 <tr class="separator:a9a01e4ad56824d89e73ffd41b73293ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac4cae8af08d3785e24ad0ec17c55633" name="aac4cae8af08d3785e24ad0ec17c55633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4cae8af08d3785e24ad0ec17c55633">&#9670;&#160;</a></span>create_csv_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DbService.DbService.create_csv_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>databaseName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>columnNameList</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a CSV file with the given name and column names. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">databaseName</td><td>The name of the CSV file to be created. </td></tr>
+    <tr><td class="paramname">columnNameList</td><td>The list of column names to be used in the CSV file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa988df81501a6143108dce97086fe920" name="aa988df81501a6143108dce97086fe920"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa988df81501a6143108dce97086fe920">&#9670;&#160;</a></span>db_initial_insert_booking()</h2>
 
@@ -200,7 +237,13 @@ str&#160;</td><td class="memItemRight" valign="bottom"><b>default_movie_media</b
 </div><div class="memdoc">
 
 <p>Dynamically generate booking records for test purposes. </p>
-<p>:param date: None :return: None </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
 
 </div>
 </div>
@@ -220,7 +263,13 @@ str&#160;</td><td class="memItemRight" valign="bottom"><b>default_movie_media</b
 </div><div class="memdoc">
 
 <p>Dynamically generate seats records for test purposes. </p>
-<p>:param date: None :return: None </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
 
 </div>
 </div>
@@ -240,7 +289,13 @@ str&#160;</td><td class="memItemRight" valign="bottom"><b>default_movie_media</b
 </div><div class="memdoc">
 
 <p>Dynamically generate screening records for the next 10 days for test purposes. </p>
-<p>:param date: None :return: None </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>None </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: None </dd></dl>
 
 </div>
 </div>
@@ -261,7 +316,13 @@ str&#160;</td><td class="memItemRight" valign="bottom"><b>default_movie_media</b
 </div><div class="memdoc">
 
 <p>Check if the coupon is valid. </p>
-<p>:param coupon: The coupon to be checked. :return: True if the coupon is valid, False otherwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coupon</td><td>The coupon to be checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: True if the coupon is valid, False otherwise. </dd></dl>
 
 </div>
 </div>

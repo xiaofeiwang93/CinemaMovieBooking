@@ -215,7 +215,12 @@ Public Attributes</h2></td></tr>
 
 <p>Constructor for the MovieTicketController class. </p>
 <p>Implement the Inversion of Control (IoC) principle here via Dependency Injection - constructor injection.</p>
-<p>:param ticket_system: An instance of the MovieTicketSystem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ticket_system</td><td>An instance of the MovieTicketSystem. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -237,7 +242,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a movie to the database. </p>
-<p>:param movie: The movie to be added. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">movie</td><td>The movie to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -268,7 +278,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cancel a booking and provide a refund to the customer. </p>
-<p>:param booking: The booking to be canceled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">booking</td><td>The booking to be canceled. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -289,7 +304,15 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checkout as a customer. </p>
-<p>:param movie_title: The title of the movie to book. :param customer_name: The name of the customer making the booking. :param seats: List of seat numbers to book. :return: A Booking object representing the booking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">movie_title</td><td>The title of the movie to book. </td></tr>
+    <tr><td class="paramname">customer_name</td><td>The name of the customer making the booking. </td></tr>
+    <tr><td class="paramname">seats</td><td>List of seat numbers to book. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A Booking object representing the booking. </dd></dl>
 
 </div>
 </div>
@@ -320,7 +343,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get a list of bookings made by a specific customer. </p>
-<p>:param customer_name: The name of the customer for whom to retrieve bookings. :return: List of Booking objects made by the customer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customer_name</td><td>The name of the customer for whom to retrieve bookings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Booking objects made by the customer. </dd></dl>
 
 </div>
 </div>
@@ -341,7 +370,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>home page </p>
-<p>:param ticket_system: None. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ticket_system</td><td>None. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -362,7 +396,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Make payment for the booking. </p>
-<p>:param booking: The booking to be paid for. :return: A Booking object representing the booking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">booking</td><td>The booking to be paid for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A Booking object representing the booking. </dd></dl>
 
 </div>
 </div>
@@ -383,7 +423,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>View a list of bookings made by a customer. </p>
-<p>:param customer_name: The name of the customer for whom to retrieve bookings. :return: List of Booking objects made by the customer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customer_name</td><td>The name of the customer for whom to retrieve bookings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Booking objects made by the customer. </dd></dl>
 
 </div>
 </div>
@@ -404,7 +450,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Process payment for the booking. </p>
-<p>:param booking: The booking to be paid for. :return: A Booking object representing the booking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">booking</td><td>The booking to be paid for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A Booking object representing the booking. </dd></dl>
 
 </div>
 </div>
@@ -425,7 +477,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search for screening based on screening date. </p>
-<p>:param date: The date of the movie to search for. :return: List of Movie objects matching the search criteria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The date of the movie to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Movie objects matching the search criteria. </dd></dl>
 
 </div>
 </div>
@@ -446,7 +504,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search for list of screening based on screening date. </p>
-<p>:param date: The date of the movie to search for. :return: List of Movie objects matching the search criteria &ndash; only return the movies that have screening for the selected date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The date of the movie to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Movie objects matching the search criteria &ndash; only return the movies that have screening for the selected date. </dd></dl>
 
 </div>
 </div>
@@ -467,7 +531,16 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search for movies based on title, language, genre, and release date. </p>
-<p>:param title: The title of the movie to search for. :param language: The language of the movie. :param genre: The genre of the movie. :param release_date: The release date of the movie. :return: List of Movie objects matching the search criteria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>The title of the movie to search for. </td></tr>
+    <tr><td class="paramname">language</td><td>The language of the movie. </td></tr>
+    <tr><td class="paramname">genre</td><td>The genre of the movie. </td></tr>
+    <tr><td class="paramname">release_date</td><td>The release date of the movie. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Movie objects matching the search criteria. </dd></dl>
 
 </div>
 </div>
@@ -488,7 +561,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search for movies based on title. </p>
-<p>:param title: The title of the movie to search for. :return: List of Movie objects matching the search criteria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>The title of the movie to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: List of Movie objects matching the search criteria. </dd></dl>
 
 </div>
 </div>
@@ -509,7 +588,15 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Book tickets for a movie on behalf of a customer. </p>
-<p>:param movie_title: The title of the movie to book. :param customer_name: The name of the customer making the booking. :param seats: List of seat numbers to book. :return: A Booking object representing the booking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">movie_title</td><td>The title of the movie to book. </td></tr>
+    <tr><td class="paramname">customer_name</td><td>The name of the customer making the booking. </td></tr>
+    <tr><td class="paramname">seats</td><td>List of seat numbers to book. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A Booking object representing the booking. </dd></dl>
 
 </div>
 </div>
@@ -540,7 +627,13 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search for movies based on id. </p>
-<p>:param id: The id of the movie. :return: A Movie objects matching the id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The id of the movie. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A Movie objects matching the id. </dd></dl>
 
 </div>
 </div>

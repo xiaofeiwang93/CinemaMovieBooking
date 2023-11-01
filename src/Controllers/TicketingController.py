@@ -12,7 +12,7 @@ class MovieTicketController:
         """!
         Constructor for the MovieTicketController class. Implement the Inversion of Control (IoC) principle here via Dependency Injection - constructor injection.
 
-        :param ticket_system: An instance of the MovieTicketSystem.
+        @param ticket_system: An instance of the MovieTicketSystem.
         """
         self.db_service = db_service
         self.login_service = login_service
@@ -29,7 +29,7 @@ class MovieTicketController:
         """!
         home page
 
-        :param ticket_system: None.
+        @param ticket_system: None.
         """
         movie_list = self.movie_service.get_all_movies()
         print(movie_list)
@@ -45,8 +45,8 @@ class MovieTicketController:
         """!
         Search for movies based on id.
 
-        :param id: The id of the movie.
-        :return: A Movie objects matching the id.
+        @param id: The id of the movie.
+        @return: A Movie objects matching the id.
 
         """
         movie = self.movie_service.search_movie_by_id(movie_id)
@@ -58,8 +58,8 @@ class MovieTicketController:
         """!
         Search for screening based on screening date.
 
-        :param date: The date of the movie to search for.
-        :return: List of Movie objects matching the search criteria.
+        @param date: The date of the movie to search for.
+        @return: List of Movie objects matching the search criteria.
         """
 
         movieid = request.args.get('movieid')
@@ -80,8 +80,8 @@ class MovieTicketController:
         """!
         Search for list of screening based on screening date.
 
-        :param date: The date of the movie to search for.
-        :return: List of Movie objects matching the search criteria -- only return the movies that have screening for the selected date.
+        @param date: The date of the movie to search for.
+        @return: List of Movie objects matching the search criteria -- only return the movies that have screening for the selected date.
         """
 
         date = request.args.get('date')
@@ -105,11 +105,11 @@ class MovieTicketController:
         """!
         Search for movies based on title, language, genre, and release date.
 
-        :param title: The title of the movie to search for.
-        :param language: The language of the movie.
-        :param genre: The genre of the movie.
-        :param release_date: The release date of the movie.
-        :return: List of Movie objects matching the search criteria.
+        @param title: The title of the movie to search for.
+        @param language: The language of the movie.
+        @param genre: The genre of the movie.
+        @param release_date: The release date of the movie.
+        @return: List of Movie objects matching the search criteria.
         """
 
         movie = Movie()
@@ -127,8 +127,8 @@ class MovieTicketController:
         """!
         Search for movies based on title.
 
-        :param title: The title of the movie to search for.
-        :return: List of Movie objects matching the search criteria.
+        @param title: The title of the movie to search for.
+        @return: List of Movie objects matching the search criteria.
         """
 
         title = request.form.get('search')
@@ -142,10 +142,10 @@ class MovieTicketController:
         """!
         Book tickets for a movie on behalf of a customer.
 
-        :param movie_title: The title of the movie to book.
-        :param customer_name: The name of the customer making the booking.
-        :param seats: List of seat numbers to book.
-        :return: A Booking object representing the booking.
+        @param movie_title: The title of the movie to book.
+        @param customer_name: The name of the customer making the booking.
+        @param seats: List of seat numbers to book.
+        @return: A Booking object representing the booking.
         """
 
         booking_view_model = BookingViewModel()
@@ -167,10 +167,10 @@ class MovieTicketController:
         """!
         Checkout as a customer
 
-        :param movie_title: The title of the movie to book.
-        :param customer_name: The name of the customer making the booking.
-        :param seats: List of seat numbers to book.
-        :return: A Booking object representing the booking.
+        @param movie_title: The title of the movie to book.
+        @param customer_name: The name of the customer making the booking.
+        @param seats: List of seat numbers to book.
+        @return: A Booking object representing the booking.
         """
         
         selected_seats = []
@@ -205,8 +205,8 @@ class MovieTicketController:
         """!
         Make payment for the booking.
 
-        :param booking: The booking to be paid for.
-        :return: A Booking object representing the booking.
+        @param booking: The booking to be paid for.
+        @return: A Booking object representing the booking.
         """
 
         payment_method = request.form.get('payment_method')
@@ -232,8 +232,8 @@ class MovieTicketController:
         """!
         Process payment for the booking.
 
-        :param booking: The booking to be paid for.
-        :return: A Booking object representing the booking.
+        @param booking: The booking to be paid for.
+        @return: A Booking object representing the booking.
         """
         payment_method = request.args.get('payment')
         is_payment_made = self.booking_service.process_payment()
@@ -248,8 +248,8 @@ class MovieTicketController:
         """!
         View a list of bookings made by a customer.
 
-        :param customer_name: The name of the customer for whom to retrieve bookings.
-        :return: List of Booking objects made by the customer.
+        @param customer_name: The name of the customer for whom to retrieve bookings.
+        @return: List of Booking objects made by the customer.
         """
         #booking_list = self.booking_service.get_customer_bookings("test")
 
@@ -263,8 +263,8 @@ class MovieTicketController:
         """!
         Get a list of bookings made by a specific customer.
 
-        :param customer_name: The name of the customer for whom to retrieve bookings.
-        :return: List of Booking objects made by the customer.
+        @param customer_name: The name of the customer for whom to retrieve bookings.
+        @return: List of Booking objects made by the customer.
         """
         pass
 
@@ -273,7 +273,7 @@ class MovieTicketController:
         """!
         Cancel a booking and provide a refund to the customer.
 
-        :param booking: The booking to be canceled.
+        @param booking: The booking to be canceled.
         """
         pass
 
@@ -281,7 +281,7 @@ class MovieTicketController:
         """!
         Add a movie to the database.
 
-        :param movie: The movie to be added.
+        @param movie: The movie to be added.
         """
         #self.admin_service.add_movie(movie)
 

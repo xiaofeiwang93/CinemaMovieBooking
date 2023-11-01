@@ -9,7 +9,7 @@ class MovieService:
         """!
         Get a list of all movies.
 
-        :return: List of Movie View Model.
+        @return: List of Movie View Model.
         """
         movie_view_models = []
 
@@ -29,7 +29,7 @@ class MovieService:
         """!
         Add media address to MovieViewModel.
 
-        :return: List of Movie View Model.
+        @return: List of Movie View Model.
         """
         movie_media = DbService.search_record_by_id(movie_id, DbService.movieMediaDbName)
         MovieService.map_movie_media_view_model(movie_media, movie_view_model)
@@ -38,7 +38,7 @@ class MovieService:
         """!
         Add screenings to MovieViewModel.
 
-        :return: List of Movie View Model.
+        @return: List of Movie View Model.
         """
         movie_screenings = DbService.search_record_by_id(movie_id, DbService.screeningDbName)
         MovieService.map_movie_screening_view_model(movie_screenings, movie_view_model)
@@ -47,7 +47,7 @@ class MovieService:
         """!
         Get a movie by ID.
 
-        :return: Movie View Model.
+        @return: Movie View Model.
         """
         movie = DbService.search_record_by_id(movie_id, DbService.movieDbName)
 
@@ -62,8 +62,8 @@ class MovieService:
         """!
         Search for movies based on title, language, genre, and release date.
 
-        :param movie_search: The Movie object containing the search criteria.
-        :return: List of Movie View Model objects matching the search criteria.
+        @param movie_search: The Movie object containing the search criteria.
+        @return: List of Movie View Model objects matching the search criteria.
         """
         movie_view_models = []
 
@@ -83,8 +83,8 @@ class MovieService:
         """!
         Search for movies based on title.
 
-        :param title: The title of the movie to search for.
-        :return: List of Movie View Model objects matching the search criteria.
+        @param title: The title of the movie to search for.
+        @return: List of Movie View Model objects matching the search criteria.
         """
         movie_view_models = []
 
@@ -104,8 +104,8 @@ class MovieService:
         """!
         Search for screening based on screening date.
 
-        :param date: The date of the movie to search for.
-        :return: List of Movie View Model objects matching the search criteria.
+        @param date: The date of the movie to search for.
+        @return: List of Movie View Model objects matching the search criteria.
         """
         screening_list = []
 
@@ -130,8 +130,8 @@ class MovieService:
         """!
         Search for screening based on screening id.
 
-        :param screening_id: The id of the screening to search for.
-        :return: List of Movie View Model objects matching the search criteria.
+        @param screening_id: The id of the screening to search for.
+        @return: List of Movie View Model objects matching the search criteria.
         """
         screening_data = DbService.search_record_by_id(screening_id, DbService.screeningDbName)
 
@@ -149,7 +149,7 @@ class MovieService:
         """!
         Map the movie_list from dictionary into movie view model.
 
-        :return: List of Movie View Model.
+        @return: List of Movie View Model.
         """
 
         movie = MovieViewModel()
@@ -168,7 +168,7 @@ class MovieService:
         """!
         Map the movie_list from dictionary into movie model.
 
-        :return: List of Movie Model.
+        @return: List of Movie Model.
         """
 
         movie = Movie(
@@ -187,7 +187,7 @@ class MovieService:
         """!
         Map the movie_media_list from dictionary into movie view model.
 
-        :return: None.
+        @return: None.
         """
         movie_view_model.cardsrcaddress = movie_media.get('cardsrcaddress')
         movie_view_model.detailbanneraddress = movie_media.get('detailbanneraddress')
@@ -196,7 +196,7 @@ class MovieService:
         """!
         Map the screening_list from dictionary into movie view model.
 
-        :return: None.
+        @return: None.
         """
         ScreenViewModel = ScreeningViewModel()
         ScreenViewModel.id = movie_screenings.get('id')

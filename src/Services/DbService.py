@@ -30,6 +30,12 @@ class DbService:
 
     # Function to create the initial CSV file
     def create_csv_file(databaseName, columnNameList):
+        """!
+        Create a CSV file with the given name and column names.
+
+        @param databaseName: The name of the CSV file to be created.
+        @param columnNameList: The list of column names to be used in the CSV file.
+        """
         try:
             with open(databaseName, mode="w", newline="") as file:
                 writer = csv.writer(file)
@@ -132,8 +138,8 @@ class DbService:
         """!
         Check if the coupon is valid. 
 
-        :param coupon: The coupon to be checked.
-        :return: True if the coupon is valid, False otherwise.
+        @param coupon: The coupon to be checked.
+        @return: True if the coupon is valid, False otherwise.
         """
 
         if couponid == "validcoupon":
@@ -338,8 +344,8 @@ class DbService:
         """!
         Dynamically generate screening records for the next 10 days for test purposes
 
-        :param date: None
-        :return: None
+        @param date: None
+        @return: None
         """
         screening_records = []
 
@@ -377,8 +383,8 @@ class DbService:
         """!
         Dynamically generate booking records for test purposes
 
-        :param date: None
-        :return: None
+        @param date: None
+        @return: None
         """
         bookings = [
             {
@@ -438,8 +444,8 @@ class DbService:
         """!
         Dynamically generate seats records for test purposes
 
-        :param date: None
-        :return: None
+        @param date: None
+        @return: None
         """
         seats = [
             {
