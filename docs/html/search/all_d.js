@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['user_0',['User',['../class_user_1_1_user.html',1,'User']]],
-  ['username_1',['username',['../class_user_1_1_user.html#ad1d17a837adecb3f2622ae791c9627a5',1,'User.User.username(self)'],['../class_user_1_1_user.html#a838e534f51949725430d26af9fc20f8a',1,'User.User.username(self, value)']]]
+  ['notification_0',['Notification',['../class_notification_1_1_notification.html',1,'Notification']]]
 ];

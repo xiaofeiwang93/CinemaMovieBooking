@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['login_0',['login',['../class_user_1_1_user.html#ad8be0016bb34e6db76f104e8a6414156',1,'User::User']]],
-  ['logout_1',['logout',['../class_user_1_1_user.html#a4d8cdc5804efe9656bfdf363162e45c3',1,'User::User']]]
+  ['endtime_0',['endtime',['../class_screening_view_model_1_1_screening_view_model.html#a1251fc77355e9642edcf4d396b117f76',1,'ScreeningViewModel.ScreeningViewModel.endtime(self)'],['../class_screening_view_model_1_1_screening_view_model.html#a136f91fbb54804a21c743dfa1eb2c63b',1,'ScreeningViewModel.ScreeningViewModel.endtime(self, value)']]]
 ];

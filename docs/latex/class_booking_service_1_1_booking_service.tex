@@ -1,0 +1,63 @@
+\doxysection{Booking\+Service.\+Booking\+Service Class Reference}
+\hypertarget{class_booking_service_1_1_booking_service}{}\label{class_booking_service_1_1_booking_service}\index{BookingService.BookingService@{BookingService.BookingService}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_booking_service_1_1_booking_service_a0839526fb1e39675cba8313c36fb0726}{save\+\_\+booking}} (Booking booking)
+\begin{DoxyCompactList}\small\item\em Save a booking to the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_booking_service_1_1_booking_service_ae4351d8ee860ae6ace90f33c6fd00592}{view\+\_\+booking\+\_\+list}} ()
+\begin{DoxyCompactList}\small\item\em View bookings from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_booking_service_1_1_booking_service_a745713c4af9c364a77211202e73ac0e5}{process\+\_\+payment}} ()
+\begin{DoxyCompactList}\small\item\em Make payment for the booking. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_booking_service_1_1_booking_service_a77134a04d90b1ab893be628fed95ceaf}{check\+\_\+coupon}} (couponid)
+\begin{DoxyCompactList}\small\item\em Check if the coupon is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_booking_service_1_1_booking_service_a77134a04d90b1ab893be628fed95ceaf}\label{class_booking_service_1_1_booking_service_a77134a04d90b1ab893be628fed95ceaf} 
+\index{BookingService.BookingService@{BookingService.BookingService}!check\_coupon@{check\_coupon}}
+\index{check\_coupon@{check\_coupon}!BookingService.BookingService@{BookingService.BookingService}}
+\doxysubsubsection{\texorpdfstring{check\_coupon()}{check\_coupon()}}
+{\footnotesize\ttfamily Booking\+Service.\+Booking\+Service.\+check\+\_\+coupon (\begin{DoxyParamCaption}\item[{}]{couponid }\end{DoxyParamCaption})}
+
+
+
+Check if the coupon is valid. 
+
+\+:param coupon\+: The coupon to be checked. \+:return\+: Coupon model object if the coupon is valid, None otherwise. \Hypertarget{class_booking_service_1_1_booking_service_a745713c4af9c364a77211202e73ac0e5}\label{class_booking_service_1_1_booking_service_a745713c4af9c364a77211202e73ac0e5} 
+\index{BookingService.BookingService@{BookingService.BookingService}!process\_payment@{process\_payment}}
+\index{process\_payment@{process\_payment}!BookingService.BookingService@{BookingService.BookingService}}
+\doxysubsubsection{\texorpdfstring{process\_payment()}{process\_payment()}}
+{\footnotesize\ttfamily Booking\+Service.\+Booking\+Service.\+process\+\_\+payment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Make payment for the booking. 
+
+In this case, we just print a message and return True. In a real application, we would use a payment gateway to process the payment.
+
+\+:param booking\+: The booking to be paid for. \+:return\+: A Booking object representing the booking. \Hypertarget{class_booking_service_1_1_booking_service_a0839526fb1e39675cba8313c36fb0726}\label{class_booking_service_1_1_booking_service_a0839526fb1e39675cba8313c36fb0726} 
+\index{BookingService.BookingService@{BookingService.BookingService}!save\_booking@{save\_booking}}
+\index{save\_booking@{save\_booking}!BookingService.BookingService@{BookingService.BookingService}}
+\doxysubsubsection{\texorpdfstring{save\_booking()}{save\_booking()}}
+{\footnotesize\ttfamily Booking\+Service.\+Booking\+Service.\+save\+\_\+booking (\begin{DoxyParamCaption}\item[{Booking}]{booking }\end{DoxyParamCaption})}
+
+
+
+Save a booking to the database. 
+
+\+:param booking\+: The booking to be saved. \Hypertarget{class_booking_service_1_1_booking_service_ae4351d8ee860ae6ace90f33c6fd00592}\label{class_booking_service_1_1_booking_service_ae4351d8ee860ae6ace90f33c6fd00592} 
+\index{BookingService.BookingService@{BookingService.BookingService}!view\_booking\_list@{view\_booking\_list}}
+\index{view\_booking\_list@{view\_booking\_list}!BookingService.BookingService@{BookingService.BookingService}}
+\doxysubsubsection{\texorpdfstring{view\_booking\_list()}{view\_booking\_list()}}
+{\footnotesize\ttfamily Booking\+Service.\+Booking\+Service.\+view\+\_\+booking\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+View bookings from the database. 
+
+\+:param \+:return\+: A List of Booking model object representing the booking. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Services/Booking\+Service.\+py\end{DoxyCompactItemize}

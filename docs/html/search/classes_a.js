@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['user_0',['User',['../class_user_1_1_user.html',1,'User']]]
+  ['screening_0',['Screening',['../class_screening_1_1_screening.html',1,'Screening']]],
+  ['screeningviewmodel_1',['ScreeningViewModel',['../class_screening_view_model_1_1_screening_view_model.html',1,'ScreeningViewModel']]]
 ];

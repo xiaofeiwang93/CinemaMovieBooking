@@ -1,0 +1,157 @@
+\doxysection{Movie\+Service.\+Movie\+Service Class Reference}
+\hypertarget{class_movie_service_1_1_movie_service}{}\label{class_movie_service_1_1_movie_service}\index{MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List\mbox{[}Movie\+View\+Model\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_abc510a0d2b664e02ca91753442279dc4}{get\+\_\+all\+\_\+movies}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of all movies. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{class_movie_service_1_1_movie_service_a01afe3585368ddccac9d214fa855cf81}{get\+\_\+movie\+\_\+media}} (int movie\+\_\+id, Movie\+View\+Model movie\+\_\+view\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Add media address to Movie\+View\+Model. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{class_movie_service_1_1_movie_service_a16d1a6811573f0703636b90136fd2ee0}{get\+\_\+movie\+\_\+screenings}} (int movie\+\_\+id, Movie\+View\+Model movie\+\_\+view\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Add screenings to Movie\+View\+Model. \end{DoxyCompactList}\item 
+Movie\+View\+Model \mbox{\hyperlink{class_movie_service_1_1_movie_service_ae45e85610c95e7a684ed5d496bebf2f4}{search\+\_\+movie\+\_\+by\+\_\+id}} (int movie\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Get a movie by ID. \end{DoxyCompactList}\item 
+List\mbox{[}Movie\+View\+Model\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_ae983021fc05fac13dd1a373dd711c102}{search\+\_\+movies}} (Movie movie\+\_\+search)
+\begin{DoxyCompactList}\small\item\em Search for movies based on title, language, genre, and release date. \end{DoxyCompactList}\item 
+List\mbox{[}Movie\+View\+Model\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_a3f0f458f3ac9764fd5d2cb9c60f4998d}{search\+\_\+movies\+\_\+by\+\_\+title}} (str title)
+\begin{DoxyCompactList}\small\item\em Search for movies based on title. \end{DoxyCompactList}\item 
+List\mbox{[}Screening\+View\+Model\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_a27cc02a6b6fc34b89f566d937304a969}{search\+\_\+movie\+\_\+by\+\_\+screening\+\_\+date}} (str date, int movieid)
+\begin{DoxyCompactList}\small\item\em Search for screening based on screening date. \end{DoxyCompactList}\item 
+Screening\+View\+Model \mbox{\hyperlink{class_movie_service_1_1_movie_service_af5c1717d054903cee1c81190de654271}{search\+\_\+screening\+\_\+by\+\_\+id}} (int screening\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Search for screening based on screening id. \end{DoxyCompactList}\item 
+List\mbox{[}Movie\+View\+Model\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_a24623f94ca98ad787e14f607fe12898f}{map\+\_\+movie\+\_\+view\+\_\+model}} (movie\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Map the movie\+\_\+list from dictionary into movie view model. \end{DoxyCompactList}\item 
+List\mbox{[}Movie\mbox{]} \mbox{\hyperlink{class_movie_service_1_1_movie_service_a2a3df71269be74ed270cc83e8b9dc19a}{map\+\_\+movie\+\_\+model}} (movie\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Map the movie\+\_\+list from dictionary into movie model. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{class_movie_service_1_1_movie_service_a366031f949084644e7e33681b7d136c4}{map\+\_\+movie\+\_\+media\+\_\+view\+\_\+model}} (movie\+\_\+media, movie\+\_\+view\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Map the movie\+\_\+media\+\_\+list from dictionary into movie view model. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{class_movie_service_1_1_movie_service_a5379870a7b7b9d4234b3f72f5beba92c}{map\+\_\+movie\+\_\+screening\+\_\+view\+\_\+model}} (movie\+\_\+screenings, movie\+\_\+view\+\_\+model)
+\begin{DoxyCompactList}\small\item\em Map the screening\+\_\+list from dictionary into movie view model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_movie_service_1_1_movie_service_abc510a0d2b664e02ca91753442279dc4}\label{class_movie_service_1_1_movie_service_abc510a0d2b664e02ca91753442279dc4} 
+\index{MovieService.MovieService@{MovieService.MovieService}!get\_all\_movies@{get\_all\_movies}}
+\index{get\_all\_movies@{get\_all\_movies}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{get\_all\_movies()}{get\_all\_movies()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\+View\+Model\mbox{]} Movie\+Service.\+Movie\+Service.\+get\+\_\+all\+\_\+movies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a list of all movies. 
+
+\+:return\+: List of Movie View Model. \Hypertarget{class_movie_service_1_1_movie_service_a01afe3585368ddccac9d214fa855cf81}\label{class_movie_service_1_1_movie_service_a01afe3585368ddccac9d214fa855cf81} 
+\index{MovieService.MovieService@{MovieService.MovieService}!get\_movie\_media@{get\_movie\_media}}
+\index{get\_movie\_media@{get\_movie\_media}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{get\_movie\_media()}{get\_movie\_media()}}
+{\footnotesize\ttfamily  None Movie\+Service.\+Movie\+Service.\+get\+\_\+movie\+\_\+media (\begin{DoxyParamCaption}\item[{int}]{movie\+\_\+id,  }\item[{Movie\+View\+Model}]{movie\+\_\+view\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Add media address to Movie\+View\+Model. 
+
+\+:return\+: List of Movie View Model. \Hypertarget{class_movie_service_1_1_movie_service_a16d1a6811573f0703636b90136fd2ee0}\label{class_movie_service_1_1_movie_service_a16d1a6811573f0703636b90136fd2ee0} 
+\index{MovieService.MovieService@{MovieService.MovieService}!get\_movie\_screenings@{get\_movie\_screenings}}
+\index{get\_movie\_screenings@{get\_movie\_screenings}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{get\_movie\_screenings()}{get\_movie\_screenings()}}
+{\footnotesize\ttfamily  None Movie\+Service.\+Movie\+Service.\+get\+\_\+movie\+\_\+screenings (\begin{DoxyParamCaption}\item[{int}]{movie\+\_\+id,  }\item[{Movie\+View\+Model}]{movie\+\_\+view\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Add screenings to Movie\+View\+Model. 
+
+\+:return\+: List of Movie View Model. \Hypertarget{class_movie_service_1_1_movie_service_a366031f949084644e7e33681b7d136c4}\label{class_movie_service_1_1_movie_service_a366031f949084644e7e33681b7d136c4} 
+\index{MovieService.MovieService@{MovieService.MovieService}!map\_movie\_media\_view\_model@{map\_movie\_media\_view\_model}}
+\index{map\_movie\_media\_view\_model@{map\_movie\_media\_view\_model}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{map\_movie\_media\_view\_model()}{map\_movie\_media\_view\_model()}}
+{\footnotesize\ttfamily  None Movie\+Service.\+Movie\+Service.\+map\+\_\+movie\+\_\+media\+\_\+view\+\_\+model (\begin{DoxyParamCaption}\item[{}]{movie\+\_\+media,  }\item[{}]{movie\+\_\+view\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Map the movie\+\_\+media\+\_\+list from dictionary into movie view model. 
+
+\+:return\+: None. \Hypertarget{class_movie_service_1_1_movie_service_a2a3df71269be74ed270cc83e8b9dc19a}\label{class_movie_service_1_1_movie_service_a2a3df71269be74ed270cc83e8b9dc19a} 
+\index{MovieService.MovieService@{MovieService.MovieService}!map\_movie\_model@{map\_movie\_model}}
+\index{map\_movie\_model@{map\_movie\_model}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{map\_movie\_model()}{map\_movie\_model()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\mbox{]} Movie\+Service.\+Movie\+Service.\+map\+\_\+movie\+\_\+model (\begin{DoxyParamCaption}\item[{}]{movie\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Map the movie\+\_\+list from dictionary into movie model. 
+
+\+:return\+: List of Movie Model. \Hypertarget{class_movie_service_1_1_movie_service_a5379870a7b7b9d4234b3f72f5beba92c}\label{class_movie_service_1_1_movie_service_a5379870a7b7b9d4234b3f72f5beba92c} 
+\index{MovieService.MovieService@{MovieService.MovieService}!map\_movie\_screening\_view\_model@{map\_movie\_screening\_view\_model}}
+\index{map\_movie\_screening\_view\_model@{map\_movie\_screening\_view\_model}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{map\_movie\_screening\_view\_model()}{map\_movie\_screening\_view\_model()}}
+{\footnotesize\ttfamily  None Movie\+Service.\+Movie\+Service.\+map\+\_\+movie\+\_\+screening\+\_\+view\+\_\+model (\begin{DoxyParamCaption}\item[{}]{movie\+\_\+screenings,  }\item[{}]{movie\+\_\+view\+\_\+model }\end{DoxyParamCaption})}
+
+
+
+Map the screening\+\_\+list from dictionary into movie view model. 
+
+\+:return\+: None. \Hypertarget{class_movie_service_1_1_movie_service_a24623f94ca98ad787e14f607fe12898f}\label{class_movie_service_1_1_movie_service_a24623f94ca98ad787e14f607fe12898f} 
+\index{MovieService.MovieService@{MovieService.MovieService}!map\_movie\_view\_model@{map\_movie\_view\_model}}
+\index{map\_movie\_view\_model@{map\_movie\_view\_model}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{map\_movie\_view\_model()}{map\_movie\_view\_model()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\+View\+Model\mbox{]} Movie\+Service.\+Movie\+Service.\+map\+\_\+movie\+\_\+view\+\_\+model (\begin{DoxyParamCaption}\item[{}]{movie\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Map the movie\+\_\+list from dictionary into movie view model. 
+
+\+:return\+: List of Movie View Model. \Hypertarget{class_movie_service_1_1_movie_service_ae45e85610c95e7a684ed5d496bebf2f4}\label{class_movie_service_1_1_movie_service_ae45e85610c95e7a684ed5d496bebf2f4} 
+\index{MovieService.MovieService@{MovieService.MovieService}!search\_movie\_by\_id@{search\_movie\_by\_id}}
+\index{search\_movie\_by\_id@{search\_movie\_by\_id}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{search\_movie\_by\_id()}{search\_movie\_by\_id()}}
+{\footnotesize\ttfamily  Movie\+View\+Model Movie\+Service.\+Movie\+Service.\+search\+\_\+movie\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{movie\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Get a movie by ID. 
+
+\+:return\+: Movie View Model. \Hypertarget{class_movie_service_1_1_movie_service_a27cc02a6b6fc34b89f566d937304a969}\label{class_movie_service_1_1_movie_service_a27cc02a6b6fc34b89f566d937304a969} 
+\index{MovieService.MovieService@{MovieService.MovieService}!search\_movie\_by\_screening\_date@{search\_movie\_by\_screening\_date}}
+\index{search\_movie\_by\_screening\_date@{search\_movie\_by\_screening\_date}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{search\_movie\_by\_screening\_date()}{search\_movie\_by\_screening\_date()}}
+{\footnotesize\ttfamily  List\mbox{[}Screening\+View\+Model\mbox{]} Movie\+Service.\+Movie\+Service.\+search\+\_\+movie\+\_\+by\+\_\+screening\+\_\+date (\begin{DoxyParamCaption}\item[{str}]{date,  }\item[{int}]{movieid }\end{DoxyParamCaption})}
+
+
+
+Search for screening based on screening date. 
+
+\+:param date\+: The date of the movie to search for. \+:return\+: List of Movie View Model objects matching the search criteria. \Hypertarget{class_movie_service_1_1_movie_service_ae983021fc05fac13dd1a373dd711c102}\label{class_movie_service_1_1_movie_service_ae983021fc05fac13dd1a373dd711c102} 
+\index{MovieService.MovieService@{MovieService.MovieService}!search\_movies@{search\_movies}}
+\index{search\_movies@{search\_movies}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{search\_movies()}{search\_movies()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\+View\+Model\mbox{]} Movie\+Service.\+Movie\+Service.\+search\+\_\+movies (\begin{DoxyParamCaption}\item[{Movie}]{movie\+\_\+search }\end{DoxyParamCaption})}
+
+
+
+Search for movies based on title, language, genre, and release date. 
+
+\+:param movie\+\_\+search\+: The Movie object containing the search criteria. \+:return\+: List of Movie View Model objects matching the search criteria. \Hypertarget{class_movie_service_1_1_movie_service_a3f0f458f3ac9764fd5d2cb9c60f4998d}\label{class_movie_service_1_1_movie_service_a3f0f458f3ac9764fd5d2cb9c60f4998d} 
+\index{MovieService.MovieService@{MovieService.MovieService}!search\_movies\_by\_title@{search\_movies\_by\_title}}
+\index{search\_movies\_by\_title@{search\_movies\_by\_title}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{search\_movies\_by\_title()}{search\_movies\_by\_title()}}
+{\footnotesize\ttfamily  List\mbox{[}Movie\+View\+Model\mbox{]} Movie\+Service.\+Movie\+Service.\+search\+\_\+movies\+\_\+by\+\_\+title (\begin{DoxyParamCaption}\item[{str}]{title }\end{DoxyParamCaption})}
+
+
+
+Search for movies based on title. 
+
+\+:param title\+: The title of the movie to search for. \+:return\+: List of Movie View Model objects matching the search criteria. \Hypertarget{class_movie_service_1_1_movie_service_af5c1717d054903cee1c81190de654271}\label{class_movie_service_1_1_movie_service_af5c1717d054903cee1c81190de654271} 
+\index{MovieService.MovieService@{MovieService.MovieService}!search\_screening\_by\_id@{search\_screening\_by\_id}}
+\index{search\_screening\_by\_id@{search\_screening\_by\_id}!MovieService.MovieService@{MovieService.MovieService}}
+\doxysubsubsection{\texorpdfstring{search\_screening\_by\_id()}{search\_screening\_by\_id()}}
+{\footnotesize\ttfamily  Screening\+View\+Model Movie\+Service.\+Movie\+Service.\+search\+\_\+screening\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{screening\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Search for screening based on screening id. 
+
+\+:param screening\+\_\+id\+: The id of the screening to search for. \+:return\+: List of Movie View Model objects matching the search criteria. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Services/Movie\+Service.\+py\end{DoxyCompactItemize}
