@@ -49,6 +49,11 @@ class DbService:
 
     # Function to get the next available ID
     def get_next_id(filename):
+        """!
+        Get the next available id for a table
+
+        @param filename: The name of the table to get the next id from
+        """
         try:
             with open(filename, 'r', newline='') as file:
                 reader = csv.DictReader(file)
@@ -63,6 +68,13 @@ class DbService:
 
     # Function to add a new record to the CSV
     def add_record(filename, record, columnNameList):
+        """!
+        Insert a record into a table
+
+        @param filename: The name of the table to insert the record into
+        @param record: The record to be inserted
+        @param columnNameList: The columns of the table
+        """
         try:
             next_id = DbService.get_next_id(filename)
             record['id'] = next_id
@@ -83,6 +95,11 @@ class DbService:
 
     # Function to read all records from the CSV
     def read_all_records(tableName):
+        """!
+        Read all records from a table
+
+        @param tableName: The name of the table to read the records from
+        """
         try:
             records = []
             with open(tableName, mode="r") as file:
@@ -99,6 +116,12 @@ class DbService:
 
     # Function to search for a record by ID
     def search_record_by_id(search_id, tableName):
+        """!
+        Search for a record by its id
+
+        @param search_id: The id of the record to search for
+        @param tableName: The name of the table to search in
+        """
         try:
             with open(tableName, mode="r", newline="") as file:
                 reader = csv.DictReader(file)
@@ -115,6 +138,13 @@ class DbService:
             return None
 
     def search_records_by_attribute(search_attribute, search_value, tableName):
+        """!
+        Search for a record by a specific attribute
+
+        @param search_attribute: The attribute to search by
+        @param search_value: The value of the attribute to search by
+        @param tableName: The name of the table to search in
+        """
         try:
             records = []
             with open(tableName, mode="r") as file:
@@ -173,6 +203,12 @@ class DbService:
             print(f"An error occurred while updating the record: {str(e)}")
 
     def search_records_by_multiple_attributes(tableName, search_data):
+        """!
+        Search for a record by multiple attributes
+
+        @param tableName: The name of the table to search in
+        @param search_data: The data to search by
+        """
         try:
             records = []
             with open(tableName, mode="r") as file:
@@ -196,6 +232,14 @@ class DbService:
             return []
     
     def is_movie_matches(row, search_data, release_date, search_release_date):
+        """!
+        Check if the movie matches the search data
+
+        @param row: The row to check
+        @param search_data: The data to search by
+        @param release_date: The release date of the movie
+        @param search_release_date: The release date of the movie to search by
+        """
         return ((row.get("title").lower().find(search_data.title) != -1 and search_data.title.lower() != '') or
                         (row.get("language").lower().find(search_data.language) != -1 and search_data.language.lower() != '') or
                         (row.get("genre").lower().find(search_data.genre) != -1 and search_data.genre.lower() != '') or 
@@ -475,6 +519,11 @@ class DbService:
             DbService.add_record(DbService.bookingSeatsDbName, record, DbService.bookingSeatsDbNameColumns)
 
     def setup_database():
+        """!
+        Create the database and add some initial records
+
+        @return: None
+        """
         DbService.db_initial_setup_movie()
         DbService.db_initial_setup_screening()
         DbService.db_initial_setup_booking()
